@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <main id="main">
+      <h1>Ylikellotus</h1>
+      <h1>Beach Party</h1>
+
+      <img id="ball" src="volleyball.svg" />
+
+      <h2 style="margin-top: 100px">Smökki 15.2.2023</h2>
+      <h3>30d 15h 20m 15s</h3>
+      <br />
+      <h3 style="margin-top: 150px">
+        Liput 8€ Kide.app <br />
+        TG @Ylikellotus - IG @Ylikellotus <br />
+        DC: Beach Party
+      </h3>
+    </main>
+    <script>
+      const ball = document.getElementById("ball").style;
+      let touchX;
+      let touchY;
+      let speedX;
+      let speedY;
+      let dx = 0;
+      let dy = 0;
+      let rotation = 0;
+      let lastTouchTime = new Date();
+      let lastTouch;
+      function handleTouch(e) {
+        if (
+          e.type == "touchstart" ||
+          e.type == "touchmove" ||
+          e.type == "touchend" ||
+          e.type == "touchcancel"
+        ) {
+          const evt =
+            typeof e.originalEvent === "undefined" ? e : e.originalEvent;
+          const touch = evt.touches[0] || evt.changedTouches[0];
+          touchX = touch.pageX;
+          touchY = touch.pageY;
+          if (lastTouch) {
+            speedX = touchX - lastTouch.pageX;
+            speedY = touchY - lastTouch.pageY;
+          }
+          lastTouch = touch;
+        } else if (
+          e.type == "mousedown" ||
+          e.type == "mouseup" ||
+          e.type == "mousemove" ||
+          e.type == "mouseover" ||
+          e.type == "mouseout" ||
+          e.type == "mouseenter" ||
+          e.type == "mouseleave"
+        ) {
+          touchX = e.clientX;
+          touchY = e.clientY;
+          speedX = e.movementX;
+          speedY = e.movementY;
+        }
+        const isValid = touchX && touchY && speedX && speedY;
+        const isInBall =
+          touchX > x &&
+          touchX < x + 2 * radius &&
+          touchY > y &&
+          touchY < y + 2 * radius;
+        const timeNow = new Date();
+        const timeSinceLastTouch = timeNow - lastTouchTime;
+        const isSomeTimeAfterLastTouch = timeSinceLastTouch > 100;
+        if (isValid && isInBall && isSomeTimeAfterLastTouch) {
+          lastTouchTime = timeNow;
+          const speedMultiplier = 2;
+          dx = speedX * speedMultiplier;
+          dy = speedY * speedMultiplier;
+        }
+      }
+      const el = document.getElementById("main");
+      el.addEventListener("touchmove", handleTouch);
+      el.addEventListener("touchstart", handleTouch);
+      el.addEventListener("touchend", handleTouch);
+      el.addEventListener("touchcancel", handleTouch);
+      el.addEventListener("mousedown", handleTouch);
+      el.addEventListener("mouseup", handleTouch);
+      el.addEventListener("mousemove", handleTouch);
+      el.addEventListener("mouseout", handleTouch);
+      el.addEventListener("mouseenter", handleTouch);
+      el.addEventListener("mouseleave", handleTouch);
+      let height = window.innerHeight;
+      let width = window.innerWidth;
+      let x = Math.random() * width;
+      let y = Math.random() * height;
+      const radius = 50;
+      setInterval(() => {
+        height = window.innerHeight; //document.body.scrollHeight
+        let width = window.innerWidth;
+        const slowdownRate = 100;
+        dx -= dx / slowdownRate;
+        dy -= dy / slowdownRate;
+        x += dx;
+        y += dy;
+        const maxX = width - 2 * radius;
+        const maxY = height - 2 * radius;
+        if (x > maxX) {
+          x = maxX;
+          dx = -dx;
+        }
+        if (y > maxY) {
+          y = maxY;
+          dy = -dy;
+        }
+        if (x < 0) {
+          x = 0;
+          dx = -dx;
+        }
+        if (y < 0) {
+          y = 0;
+          dy = -dy;
+        }
+        ball.left = `${x}px`;
+        ball.top = `${y}px`;
+        rotation += Math.max(Math.abs(dx), Math.abs(dy));
+        ball.transform = `rotate(${rotation}deg)`;
+      }, 5);
+      document.h;
+    </script>
+  </body>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+    }
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    #ball {
+      width: 100px;
+      height: 100px;
+      position: fixed;
+    }
+  </style>
+</html>
