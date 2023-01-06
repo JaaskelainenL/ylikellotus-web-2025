@@ -120,7 +120,9 @@
     el.addEventListener("touchend", handleTouch);
     el.addEventListener("touchcancel", handleTouch);
     el.addEventListener("mousemove", handleTouch);
-    setInterval(() => {
+    function update() {
+      height = document.body.scrollHeight;
+      width = document.body.clientWidth;
       const slowdownRate = 100;
       dx -= dx / slowdownRate;
       dy -= dy / slowdownRate;
@@ -148,7 +150,10 @@
       ball.top = `${y}px`;
       rotation += Math.max(Math.abs(dx), Math.abs(dy));
       ball.transform = `rotate(${rotation}deg)`;
-    }, 5);
+      window.requestAnimationFrame(update);
+    }
+    window.requestAnimationFrame(update);
+
     const updateCountdown = () => {
       const timeLeft = eventDate - new Date();
       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
