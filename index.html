@@ -121,8 +121,6 @@
     el.addEventListener("touchcancel", handleTouch);
     el.addEventListener("mousemove", handleTouch);
     setInterval(() => {
-      height = document.body.scrollHeight;
-      width = document.body.clientWidth;
       const slowdownRate = 100;
       dx -= dx / slowdownRate;
       dy -= dy / slowdownRate;
