@@ -57,15 +57,27 @@
       );
     }
     const ball = document.getElementById("ball").style;
+    let height = document.body.scrollHeight;
+    let width = document.body.clientWidth;
+    const radius = 50;
+    const eventDate = new Date("2023-02-15T18:00:00+02:00");
+    const isMobile = isOnMobile();
     let touchX;
     let touchY;
     let speedX;
     let speedY;
+    let x = width / 2 - radius;
+    let y = 200;
     let dx = 5;
     let dy = -7;
     let rotation = 0;
     let lastTouchTime = new Date();
-    let lastTouch;
+    const calculateSpeed = (touchPoint, centerPoint) => {
+      const distanceFromCenter = touchPoint - centerPoint - radius;
+      const normalizedDistance = distanceFromCenter / radius;
+      const speed = normalizedDistance * 10;
+      return speed;
+    };
     function handleTouch(e) {
       if (
         e.type == "touchstart" ||
@@ -78,11 +90,8 @@
         const touch = evt.touches[0] || evt.changedTouches[0];
         touchX = touch.pageX;
         touchY = touch.pageY;
-        if (lastTouch) {
-          speedX = touchX - lastTouch.pageX;
-          speedY = touchY - lastTouch.pageY;
-        }
-        lastTouch = touch;
+        speedX = calculateSpeed(touch.pageX, x);
+        speedY = -calculateSpeed(touch.pageY, y);
       } else if (e.type === "mousemove") {
         touchX = e.pageX;
         touchY = e.pageY;
@@ -111,13 +120,6 @@
     el.addEventListener("touchend", handleTouch);
     el.addEventListener("touchcancel", handleTouch);
     el.addEventListener("mousemove", handleTouch);
-    let height = document.body.scrollHeight;
-    let width = document.body.clientWidth;
-    const radius = 50;
-    let x = width / 2 - radius;
-    let y = 200;
-    const eventDate = new Date("2023-02-15T18:00:00+02:00");
-    const isMobile = isOnMobile();
     setInterval(() => {
       height = document.body.scrollHeight;
       width = document.body.clientWidth;
@@ -216,7 +218,7 @@
     }
 
     .arrows path {
-      stroke: black;
+      stroke: #84ffcb;
       fill: transparent;
       stroke-width: 1px;
       animation: arrow 2s infinite;
