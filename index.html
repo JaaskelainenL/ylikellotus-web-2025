@@ -12,7 +12,7 @@
         </div>
         <div>
           <h2>Smökki 15.2.2023</h2>
-          <h3 id="counter">30d 15h 20m 15s</h3>
+          <h3 id="counter"></h3>
         </div>
         <h3>
           Liput 8€ Kide.app <br />
@@ -66,10 +66,10 @@
     let touchY;
     let speedX;
     let speedY;
-    let x = width / 2 - radius;
-    let y = 200;
-    let dx = 5;
-    let dy = -7;
+    let x = isMobile ? 0 : width / 3;
+    let y = 0;
+    let dx = 2;
+    let dy = 2;
     let rotation = 0;
     let lastTouchTime = new Date();
     const calculateSpeed = (touchPoint, centerPoint) => {
@@ -150,6 +150,8 @@
       ball.top = `${y}px`;
       rotation += Math.max(Math.abs(dx), Math.abs(dy));
       ball.transform = `rotate(${rotation}deg)`;
+    }, 5);
+    const updateCountdown = () => {
       const timeLeft = eventDate - new Date();
       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
@@ -160,7 +162,11 @@
       document.getElementById(
         "counter"
       ).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 5);
+    };
+    updateCountdown();
+    setInterval(() => {
+      updateCountdown();
+    }, 1000);
     document.h;
   </script>
   <style>
