@@ -2,135 +2,173 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+  <body id="body">
+    <img id="ball" src="volleyball.svg" alt="volleyball" />
     <main id="main">
-      <h1>Ylikellotus</h1>
-      <h1>Beach Party</h1>
-
-      <img id="ball" src="volleyball.svg" />
-
-      <h2 style="margin-top: 100px">Smökki 15.2.2023</h2>
-      <h3>30d 15h 20m 15s</h3>
-      <br />
-      <h3 style="margin-top: 150px">
-        Liput 8€ Kide.app <br />
-        TG @Ylikellotus - IG @Ylikellotus <br />
-        DC: Beach Party
-      </h3>
+      <div id="landing">
+        <div>
+          <h1>Ylikellotus</h1>
+          <h1>Beach Party</h1>
+        </div>
+        <div>
+          <h2>Smökki 15.2.2023</h2>
+          <h3 id="counter">30d 15h 20m 15s</h3>
+        </div>
+        <h3>
+          Liput 8€ Kide.app <br />
+          TG @Ylikellotus - IG @Ylikellotus <br />
+          DC: Beach Party
+        </h3>
+        <div>
+          <svg class="arrows">
+            <path class="a1" d="M0 0 L30 32 L60 0"></path>
+            <path class="a2" d="M0 20 L30 52 L60 20"></path>
+            <path class="a3" d="M0 40 L30 72 L60 40"></path>
+          </svg>
+        </div>
+      </div>
+      <div id="info">
+        <text>
+          Vau täällä on tosi paljon lisää infoa yms. yms. Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum</text
+        >
+      </div>
     </main>
-    <script>
-      const ball = document.getElementById("ball").style;
-      let touchX;
-      let touchY;
-      let speedX;
-      let speedY;
-      let dx = 0;
-      let dy = 0;
-      let rotation = 0;
-      let lastTouchTime = new Date();
-      let lastTouch;
-      function handleTouch(e) {
-        if (
-          e.type == "touchstart" ||
-          e.type == "touchmove" ||
-          e.type == "touchend" ||
-          e.type == "touchcancel"
-        ) {
-          const evt =
-            typeof e.originalEvent === "undefined" ? e : e.originalEvent;
-          const touch = evt.touches[0] || evt.changedTouches[0];
-          touchX = touch.pageX;
-          touchY = touch.pageY;
-          if (lastTouch) {
-            speedX = touchX - lastTouch.pageX;
-            speedY = touchY - lastTouch.pageY;
-          }
-          lastTouch = touch;
-        } else if (
-          e.type == "mousedown" ||
-          e.type == "mouseup" ||
-          e.type == "mousemove" ||
-          e.type == "mouseover" ||
-          e.type == "mouseout" ||
-          e.type == "mouseenter" ||
-          e.type == "mouseleave"
-        ) {
-          touchX = e.clientX;
-          touchY = e.clientY;
-          speedX = e.movementX;
-          speedY = e.movementY;
-        }
-        const isValid = touchX && touchY && speedX && speedY;
-        const isInBall =
-          touchX > x &&
-          touchX < x + 2 * radius &&
-          touchY > y &&
-          touchY < y + 2 * radius;
-        const timeNow = new Date();
-        const timeSinceLastTouch = timeNow - lastTouchTime;
-        const isSomeTimeAfterLastTouch = timeSinceLastTouch > 100;
-        if (isValid && isInBall && isSomeTimeAfterLastTouch) {
-          lastTouchTime = timeNow;
-          const speedMultiplier = 2;
-          dx = speedX * speedMultiplier;
-          dy = speedY * speedMultiplier;
-        }
-      }
-      const el = document.getElementById("main");
-      el.addEventListener("touchmove", handleTouch);
-      el.addEventListener("touchstart", handleTouch);
-      el.addEventListener("touchend", handleTouch);
-      el.addEventListener("touchcancel", handleTouch);
-      el.addEventListener("mousedown", handleTouch);
-      el.addEventListener("mouseup", handleTouch);
-      el.addEventListener("mousemove", handleTouch);
-      el.addEventListener("mouseout", handleTouch);
-      el.addEventListener("mouseenter", handleTouch);
-      el.addEventListener("mouseleave", handleTouch);
-      let height = window.innerHeight;
-      let width = window.innerWidth;
-      let x = Math.random() * width;
-      let y = Math.random() * height;
-      const radius = 50;
-      setInterval(() => {
-        height = window.innerHeight; //document.body.scrollHeight
-        let width = window.innerWidth;
-        const slowdownRate = 100;
-        dx -= dx / slowdownRate;
-        dy -= dy / slowdownRate;
-        x += dx;
-        y += dy;
-        const maxX = width - 2 * radius;
-        const maxY = height - 2 * radius;
-        if (x > maxX) {
-          x = maxX;
-          dx = -dx;
-        }
-        if (y > maxY) {
-          y = maxY;
-          dy = -dy;
-        }
-        if (x < 0) {
-          x = 0;
-          dx = -dx;
-        }
-        if (y < 0) {
-          y = 0;
-          dy = -dy;
-        }
-        ball.left = `${x}px`;
-        ball.top = `${y}px`;
-        rotation += Math.max(Math.abs(dx), Math.abs(dy));
-        ball.transform = `rotate(${rotation}deg)`;
-      }, 5);
-      document.h;
-    </script>
   </body>
+  <script>
+    function isOnMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    }
+    const ball = document.getElementById("ball").style;
+    let touchX;
+    let touchY;
+    let speedX;
+    let speedY;
+    let dx = 5;
+    let dy = -7;
+    let rotation = 0;
+    let lastTouchTime = new Date();
+    let lastTouch;
+    function handleTouch(e) {
+      if (
+        e.type == "touchstart" ||
+        e.type == "touchmove" ||
+        e.type == "touchend" ||
+        e.type == "touchcancel"
+      ) {
+        const evt =
+          typeof e.originalEvent === "undefined" ? e : e.originalEvent;
+        const touch = evt.touches[0] || evt.changedTouches[0];
+        touchX = touch.pageX;
+        touchY = touch.pageY;
+        if (lastTouch) {
+          speedX = touchX - lastTouch.pageX;
+          speedY = touchY - lastTouch.pageY;
+        }
+        lastTouch = touch;
+      } else if (e.type === "mousemove") {
+        touchX = e.pageX;
+        touchY = e.pageY;
+        speedX = e.movementX;
+        speedY = e.movementY;
+      }
+      const isValid = touchX && touchY && speedX && speedY;
+      const isInBall =
+        touchX > x &&
+        touchX < x + 2 * radius &&
+        touchY > y &&
+        touchY < y + 2 * radius;
+      const timeNow = new Date();
+      const timeSinceLastTouch = timeNow - lastTouchTime;
+      const isSomeTimeAfterLastTouch = timeSinceLastTouch > 100;
+      if (isValid && isInBall && isSomeTimeAfterLastTouch) {
+        lastTouchTime = timeNow;
+        const speedMultiplier = 2;
+        dx = speedX * speedMultiplier;
+        dy = speedY * speedMultiplier;
+      }
+    }
+    const el = document.getElementById("body");
+    el.addEventListener("touchmove", handleTouch);
+    el.addEventListener("touchstart", handleTouch);
+    el.addEventListener("touchend", handleTouch);
+    el.addEventListener("touchcancel", handleTouch);
+    el.addEventListener("mousemove", handleTouch);
+    let height = document.body.scrollHeight;
+    let width = document.body.clientWidth;
+    const radius = 50;
+    let x = width / 2 - radius;
+    let y = 200;
+    const eventDate = new Date("2023-02-15T18:00:00+02:00");
+    const isMobile = isOnMobile();
+    setInterval(() => {
+      height = document.body.scrollHeight;
+      width = document.body.clientWidth;
+      const slowdownRate = 100;
+      dx -= dx / slowdownRate;
+      dy -= dy / slowdownRate;
+      x += dx;
+      y += dy;
+      const maxX = width - 2 * radius - (isMobile ? 0 : 20);
+      const maxY = height - 2 * radius;
+      if (x > maxX) {
+        x = maxX;
+        dx = -dx;
+      }
+      if (y > maxY) {
+        y = maxY;
+        dy = -dy;
+      }
+      if (x < 0) {
+        x = 0;
+        dx = -dx;
+      }
+      if (y < 0) {
+        y = 0;
+        dy = -dy;
+      }
+      ball.left = `${x}px`;
+      ball.top = `${y}px`;
+      rotation += Math.max(Math.abs(dx), Math.abs(dy));
+      ball.transform = `rotate(${rotation}deg)`;
+      const timeLeft = eventDate - new Date();
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      document.getElementById(
+        "counter"
+      ).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 5);
+    document.h;
+  </script>
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
       margin: 0;
+      width: 100%;
+      background: #451299;
+      color: #84ffcb;
     }
     h1 {
       font-size: 4rem;
@@ -143,7 +181,76 @@
     #ball {
       width: 100px;
       height: 100px;
-      position: fixed;
+      position: absolute;
+      display: inline-block;
+    }
+    #landing {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      #main {
+        width: 40%;
+        margin-left: 30%;
+      }
+    }
+
+    .arrows {
+      width: 60px;
+      height: 72px;
+      position: absolute;
+      left: 50%;
+      margin-left: -30px;
+      bottom: 20px;
+    }
+
+    .arrows path {
+      stroke: black;
+      fill: transparent;
+      stroke-width: 1px;
+      animation: arrow 2s infinite;
+      -webkit-animation: arrow 2s infinite;
+    }
+
+    @keyframes arrow {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .arrows path.a1 {
+      animation-delay: -1s;
+      -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+    }
+
+    .arrows path.a2 {
+      animation-delay: -0.5s;
+      -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+    }
+
+    .arrows path.a3 {
+      animation-delay: 0s;
+      -webkit-animation-delay: 0s; /* Safari 和 Chrome */
     }
   </style>
 </html>
