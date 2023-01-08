@@ -13,7 +13,7 @@ body {
   margin: 0;
   width: 100%;
   background: #451299;
-  color: black;
+  color: #554077;
   background: rgb(254, 235, 185);
   background: linear-gradient(
     0deg,
@@ -22,11 +22,18 @@ body {
     rgba(203, 152, 243, 1) 100%
   );
 }
+#counter {
+  margin-top: -100px;
+}
 #ball {
-  width: 100px;
-  height: 100px;
+  width: 200px;
   position: absolute;
   display: inline-block;
+}
+#circleText {
+  width: 500px;
+  height: 500px;
+  margin-top: -60px;
 }
 #landing {
   height: 100%;
@@ -65,14 +72,12 @@ body {
 .arrows {
   width: 60px;
   height: 72px;
-  position: absolute;
-  left: 50%;
   margin-left: -30px;
-  bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .arrows path {
-  stroke: #84ffcb;
+  stroke: #554077;
   fill: transparent;
   stroke-width: 1px;
   animation: arrow 2s infinite;

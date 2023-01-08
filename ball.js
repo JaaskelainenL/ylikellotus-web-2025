@@ -3,19 +3,29 @@ function isOnMobile() {
     navigator.userAgent
   );
 }
-const ball = document.getElementById("ball").style;
+function getXandY(el) {
+  const rect = el.getBoundingClientRect();
+  const left = rect.left;
+  const bottom = rect.top;
+  const width = ball.offsetWidth;
+  const height = ball.offsetHeight;
+  console.log(height, bottom);
+  return { x: left - width / 2, y: bottom - height / 2 };
+}
+const ball = document.getElementById("ball");
+const ballStyle = ball.style;
 let height = document.body.scrollHeight;
 let width = document.body.clientWidth;
-const radius = 50;
+const radius = ball.offsetWidth / 2;
 const isMobile = isOnMobile();
 let touchX;
 let touchY;
 let speedX;
 let speedY;
-let x = isMobile ? 0 : width / 3;
-let y = 0;
-let dx = 2;
-let dy = 2;
+let x = width / 2 - radius;
+let y = 100;
+let dx = 0;
+let dy = 0;
 let rotation = 0;
 let lastTouchTime = new Date();
 const calculateSpeed = (touchPoint, centerPoint) => {
@@ -40,8 +50,9 @@ function handleTouch(e) {
   } else if (e.type === "mousemove") {
     touchX = e.pageX;
     touchY = e.pageY;
-    speedX = e.movementX;
-    speedY = e.movementY;
+    const mouseSpeedMultiplier = 0.5;
+    speedX = e.movementX * mouseSpeedMultiplier;
+    speedY = e.movementY * mouseSpeedMultiplier;
   }
   const isValid = touchX && touchY && speedX && speedY;
   const isInBall =
@@ -73,7 +84,7 @@ function update() {
   dy -= dy / slowdownRate;
   x += dx;
   y += dy;
-  const maxX = width - 2 * radius - (isMobile ? 0 : 20);
+  const maxX = width - 2 * radius - (isMobile ? 0 : radius * 0.4); //Stutter burger fix
   const maxY = height - 2 * radius;
   if (x > maxX) {
     x = maxX;
@@ -91,10 +102,10 @@ function update() {
     y = 0;
     dy = -dy;
   }
-  ball.left = `${x}px`;
-  ball.top = `${y}px`;
+  ballStyle.left = `${x}px`;
+  ballStyle.top = `${y}px`;
   rotation += Math.max(Math.abs(dx), Math.abs(dy));
-  ball.transform = `rotate(${rotation}deg)`;
+  ballStyle.transform = `rotate(${rotation}deg)`;
   window.requestAnimationFrame(update);
 }
 window.requestAnimationFrame(update);
