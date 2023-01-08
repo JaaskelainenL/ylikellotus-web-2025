@@ -18,9 +18,8 @@ let y = 100;
 let dx = 0;
 let dy = 0;
 let rotation = 0;
+let hasStarted = false;
 let lastTouchTime = new Date();
-ballStyle.left = `${x}px`;
-ballStyle.top = `${y}px`;
 const calculateSpeed = (touchPoint, centerPoint) => {
   const distanceFromCenter = touchPoint - centerPoint - radius;
   const normalizedDistance = distanceFromCenter / radius;
@@ -75,7 +74,7 @@ function update() {
   const slowdownRate = 100;
   dx -= dx / slowdownRate;
   dy -= dy / slowdownRate;
-  const gravity = 0.05;
+  const gravity = hasStarted ? 0.05 : 0;
   dy += gravity;
   x += dx;
   y += dy;
@@ -99,12 +98,14 @@ function update() {
   }
   ballStyle.left = `${x}px`;
   ballStyle.top = `${y}px`;
-  const minRotation = y + 20 >= maxY ? 0 : 2;
+  const minRotation = y + 20 >= maxY || !hasStarted ? 0 : 2;
   rotation += Math.max(Math.abs(dx), Math.abs(dy), minRotation);
   ballStyle.transform = `rotate(${rotation}deg)`;
   window.requestAnimationFrame(update);
 }
 const timeToAnimationStart = 3000;
 setTimeout(function () {
-  window.requestAnimationFrame(update);
+  hasStarted = true;
 }, timeToAnimationStart);
+
+window.requestAnimationFrame(update);
