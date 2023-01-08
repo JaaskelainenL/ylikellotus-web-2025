@@ -27,6 +27,8 @@ body {
     rgba(248, 163, 170, 1) 40%,
     rgba(203, 152, 243, 1) 100%
   );
+  text-shadow: 1px 1px 0px white;
+  overflow-x: hidden;
 }
 #counter {
   margin-top: -100px;
@@ -40,6 +42,7 @@ body {
   width: 500px;
   height: 500px;
   margin-top: -60px;
+  overflow: hidden;
 }
 #landing {
   height: 100%;

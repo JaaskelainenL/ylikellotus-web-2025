@@ -5,8 +5,8 @@ function isOnMobile() {
 }
 const ball = document.getElementById("ball");
 const ballStyle = ball.style;
-let height = document.body.scrollHeight;
-let width = document.body.clientWidth;
+height = document.getElementById("body").offsetHeight;
+width = document.body.clientWidth;
 const radius = ball.offsetWidth / 2;
 const isMobile = isOnMobile();
 let touchX;
@@ -19,6 +19,8 @@ let dx = 0;
 let dy = 0;
 let rotation = 0;
 let lastTouchTime = new Date();
+ballStyle.left = `${x}px`;
+ballStyle.top = `${y}px`;
 const calculateSpeed = (touchPoint, centerPoint) => {
   const distanceFromCenter = touchPoint - centerPoint - radius;
   const normalizedDistance = distanceFromCenter / radius;
@@ -68,14 +70,16 @@ el.addEventListener("touchend", handleTouch);
 el.addEventListener("touchcancel", handleTouch);
 el.addEventListener("mousemove", handleTouch);
 function update() {
-  height = document.body.scrollHeight;
+  height = document.getElementById("body").offsetHeight;
   width = document.body.clientWidth;
   const slowdownRate = 100;
   dx -= dx / slowdownRate;
   dy -= dy / slowdownRate;
+  const gravity = 0.05;
+  dy += gravity;
   x += dx;
   y += dy;
-  const maxX = width - 2 * radius - (isMobile ? 0 : radius * 0.4); //Stutter burger fix
+  const maxX = width - 2 * radius;
   const maxY = height - 2 * radius;
   if (x > maxX) {
     x = maxX;
@@ -95,8 +99,12 @@ function update() {
   }
   ballStyle.left = `${x}px`;
   ballStyle.top = `${y}px`;
-  rotation += Math.max(Math.abs(dx), Math.abs(dy));
+  const minRotation = y + 20 >= maxY ? 0 : 2;
+  rotation += Math.max(Math.abs(dx), Math.abs(dy), minRotation);
   ballStyle.transform = `rotate(${rotation}deg)`;
   window.requestAnimationFrame(update);
 }
-window.requestAnimationFrame(update);
+const timeToAnimationStart = 0; //3000;
+setTimeout(function () {
+  window.requestAnimationFrame(update);
+}, timeToAnimationStart);
