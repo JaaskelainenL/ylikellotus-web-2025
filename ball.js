@@ -104,7 +104,7 @@ function update() {
   ballStyle.transform = `rotate(${rotation}deg)`;
   window.requestAnimationFrame(update);
 }
-const timeToAnimationStart = 0; //3000;
+const timeToAnimationStart = 3000;
 setTimeout(function () {
   window.requestAnimationFrame(update);
 }, timeToAnimationStart);

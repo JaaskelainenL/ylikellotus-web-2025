@@ -43,6 +43,7 @@ body {
   height: 500px;
   margin-top: -60px;
   overflow: hidden;
+  display: block;
 }
 #landing {
   height: 100%;
@@ -50,6 +51,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 #info {
   display: flex;
