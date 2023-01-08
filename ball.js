@@ -3,15 +3,6 @@ function isOnMobile() {
     navigator.userAgent
   );
 }
-function getXandY(el) {
-  const rect = el.getBoundingClientRect();
-  const left = rect.left;
-  const bottom = rect.top;
-  const width = ball.offsetWidth;
-  const height = ball.offsetHeight;
-  console.log(height, bottom);
-  return { x: left - width / 2, y: bottom - height / 2 };
-}
 const ball = document.getElementById("ball");
 const ballStyle = ball.style;
 let height = document.body.scrollHeight;
