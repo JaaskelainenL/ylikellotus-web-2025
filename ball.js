@@ -71,8 +71,8 @@ function drawRotatedBall(x, y, w, h, degrees) {
 }
 
 function update() {
-  canvas.width = width
-  canvas.height = height
+  canvas.width = width * window.devicePixelRatio
+  canvas.height = height * window.devicePixelRatio
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   height = document.getElementById('body').offsetHeight
   width = document.body.clientWidth
@@ -103,7 +103,8 @@ function update() {
   }
   const minRotation = y + 20 >= maxY || !hasStarted ? 0 : 2
   rotation += Math.max(Math.abs(dx), Math.abs(dy), minRotation)
-  drawRotatedBall(x, y, ballSize, ballSize, rotation)
+  const scaledBallSize = ballSize * window.devicePixelRatio
+  drawRotatedBall(x * window.devicePixelRatio, y * window.devicePixelRatio, scaledBallSize, scaledBallSize, rotation)
   window.requestAnimationFrame(update)
 }
 const timeToAnimationStart = 3000
