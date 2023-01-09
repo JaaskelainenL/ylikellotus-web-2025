@@ -21,28 +21,17 @@ body {
   background: #451299;
   color: #451299;
   background: rgb(254, 235, 185);
-  background: linear-gradient(
-    0deg,
-    rgba(254, 235, 185, 1) 0%,
-    rgba(248, 163, 170, 1) 40%,
-    rgba(203, 152, 243, 1) 100%
-  );
+  background: linear-gradient(0deg, rgba(254, 235, 185, 1) 0%, rgba(248, 163, 170, 1) 40%, rgba(203, 152, 243, 1) 100%);
   text-shadow: 1px 1px 0px white;
   overflow-x: hidden;
 }
 #counter {
   margin-top: -100px;
 }
-#ball {
-  width: 200px;
-  position: absolute;
-  display: inline-block;
-}
 #circleText {
   width: 500px;
   height: 500px;
   margin-top: -60px;
-  overflow: hidden;
   display: block;
 }
 #landing {
@@ -85,7 +74,6 @@ body {
   fill: transparent;
   stroke-width: 1px;
   animation: arrow 2s infinite;
-  -webkit-animation: arrow 2s infinite;
 }
 
 @keyframes arrow {
@@ -105,17 +93,14 @@ body {
 
 .arrows path.a1 {
   animation-delay: -1s;
-  -webkit-animation-delay: -1s; /* Safari 和 Chrome */
 }
 
 .arrows path.a2 {
   animation-delay: -0.5s;
-  -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
 }
 
 .arrows path.a3 {
   animation-delay: 0s;
-  -webkit-animation-delay: 0s; /* Safari 和 Chrome */
 }
 
 @media only screen and (min-width: 768px) {
@@ -129,4 +114,10 @@ body {
   h3 {
     font-size: 2rem;
   }
+}
+canvas {
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
 }
