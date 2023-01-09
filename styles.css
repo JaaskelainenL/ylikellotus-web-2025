@@ -12,6 +12,12 @@ h3 {
   margin: 0;
   text-shadow: 2px 2px 0px white;
 }
+p {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-shadow: none;
+  text-shadow: 1px 1px 0px white;
+}
 body {
   font-family: someTimeLater;
   position: relative;
@@ -31,7 +37,7 @@ body {
 #circleText {
   width: 500px;
   height: 500px;
-  margin-top: -60px;
+  margin-top: -55px;
   display: block;
 }
 #landing {
@@ -48,6 +54,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 60px;
+  padding-bottom: 180px;
 }
 #palms {
   width: 100%;
@@ -121,4 +128,23 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+#languageChoices {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+.langButton {
+  width: 60px;
+  height: 15px;
+  background: none;
+  padding: none;
+  border: none;
+}
+
+.langImage {
+  border-radius: 3px;
 }
