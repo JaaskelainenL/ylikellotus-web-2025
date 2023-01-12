@@ -21,6 +21,8 @@ p {
   font-family: futura;
   text-shadow: none;
   color: #220138;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 body {
   font-family: someTimeLater;
@@ -127,6 +129,10 @@ body {
   }
   h3 {
     font-size: 2rem;
+  }
+  p {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 canvas {
