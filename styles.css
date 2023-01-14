@@ -1,6 +1,13 @@
 @font-face {
+  font-family: futura;
+  src: url(futura.ttf);
+}
+@font-face {
   font-family: someTimeLater;
   src: url(someTimeLater.otf);
+}
+:root {
+  scroll-behavior: smooth;
 }
 h2 {
   font-size: 2rem;
@@ -14,9 +21,11 @@ h3 {
 }
 p {
   font-size: 1.5rem;
-  font-family: sans-serif;
+  font-family: futura;
   text-shadow: none;
-  text-shadow: 1px 1px 0px white;
+  color: #220138;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 body {
   font-family: someTimeLater;
@@ -30,6 +39,9 @@ body {
   background: linear-gradient(0deg, rgba(254, 235, 185, 1) 0%, rgba(248, 163, 170, 1) 40%, rgba(203, 152, 243, 1) 100%);
   text-shadow: 1px 1px 0px white;
   overflow-x: hidden;
+}
+#filter {
+  background: rgba(255, 214, 243, 0.2);
 }
 #counter {
   margin-top: -100px;
@@ -121,6 +133,10 @@ body {
   h3 {
     font-size: 2rem;
   }
+  p {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 canvas {
   left: 0;
@@ -128,6 +144,7 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 #languageChoices {
