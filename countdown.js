@@ -1,4 +1,4 @@
-const eventDate = new Date('2023-02-15T18:00:00+02:00')
+const eventDate = new Date('2023-02-15T20:00:00+02:00')
 const updateCountdown = () => {
   const timeLeft = eventDate - new Date()
   const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))

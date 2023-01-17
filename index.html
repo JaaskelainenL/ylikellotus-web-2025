@@ -1,14 +1,122 @@
 <html lang="fi">
   <head>
-    <title>Ylikellotus 2022</title>
+    <title>Ylikellotus 2023</title>
     <meta charset="UTF-8" />
-    <meta name="description" content="Ylikellotus 2022:n nettisivut." />
+    <meta name="description" content="Ylikellotus 2023:n nettisivut. Helmikuun parhaat rantabileet!" />
     <meta name="author" content="Otto Söderman" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body id="body" style="background: black; color: white; font-family: Arial, Helvetica, sans-serif">
-    <h1>Julkistetaan 17.1.</h1>
+  <body id="body">
+    <div id="languageChoices">
+      <button id="finnish" class="langButton"><img src="fi.svg" class="langImage" id="finnishFlag" /></button>
+      <button id="english" class="langButton"><img src="gb.svg" class="langImage" id="englishFlag" /></button>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="filter">
+      <img id="palms" src="palms_big.png" alt="background palm trees" />
+      <main id="main">
+        <div id="landing">
+          <img id="circleText" src="circleText.png" alt="Ylikellotus Wednesday, February 15th" />
+          <h2 id="counter"></h2>
+          <h3 id="fiLanding">
+            Smökki<br />
+            Liput 8€, VIP 35€<br />
+            TG @Ylikellotus - IG @Ylikellotus<br />
+            DC: Beach Party
+          </h3>
+          <h3 id="enLanding" style="display: none">
+            Smökki<br />
+            Tickets 8€, VIP 35€<br />
+            TG @Ylikellotus - IG @Ylikellotus<br />
+            DC: Beach Party
+          </h3>
+          <div>
+            <a href="#info">
+              <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div id="info">
+          <text id="fiInfo">
+            <h2>Ylikellotus 15.2.</h2>
+            <p>
+              Oletko jo valmis jättämään taaksesi hyisen talvisään? Irtaannu talven alakulosta ja lähde mukaan
+              Tietokillan fuksibileisiin - ja nappaa mukaan flipflopit, sillä tänä vuonna teema on Beach Party!
+            </p>
+            <p>
+              Osallistujille on luvassa ennennäkemättömät tarjoilut trooppisella twistillä ja mukaansatempaavaa ohjelmaa
+              koko illan täydeltä. Näitä bileitä et varmana halua missata!
+            </p>
+
+            <h2>Missä ja milloin?</h2>
+            <p>Smökissä ke 15.2.</p>
+
+            <h2>Pukukoodi?</h2>
+            <p>
+              Kaiva värikkäimmät havaijipaidat ja päheimmät arskat kaapin perältä ja astu kanssamme etelän tunnelmaan.
+              Myös haalarit rantatwistillä ovat tervetulleita!
+            </p>
+
+            <h2>Lipunmyynti?</h2>
+            <p>Lipunmyynti alkaa Talvipäivillä 17.1. Alvarin aukiolla.</p>
+
+            <h2>Paljonko maksaa?</h2>
+            <p>8€ sisältäen vuoden kovimmat bileet ja kuumimman haalarimerkin!</p>
+            <p>35€ VIP-lipusta, jos haluat entistäkin ainutlaatuisemman kokemuksen.</p>
+
+            <h2>Mitä muuta?</h2>
+            <p>
+              Seuraa <a href="https://www.instagram.com/ylikellotus/" target="_blank">Instagramissa</a> ja
+              <a href="http://t.me/ylikellotustiedotus" target="_blank">Telegramissa</a> @Ylikellotus niin et missaa
+              tärkeää infoa! Muista myös tuoda mukanasi käteistä!
+            </p>
+            <p>Tapahtuma on K-18.</p>
+          </text>
+          <text id="enInfo" style="display: none">
+            <h2>Ylikellotus 15.2.</h2>
+            <p>
+              Are you ready to escape the freezing winter breeze and bring a little summer into your life? Snap out of
+              your winter blues and join us at Tietokilta's freshman party that will have you feeling like you're on a
+              tropical island!
+            </p>
+            <p>
+              Participants can expect refreshments with a tropical twist, served with a side of fun and engaging
+              beach-themed games through the entire evening. So grab your friends and your flip-flops, because you
+              definitely won't want to miss this party!
+            </p>
+
+            <h2>When and where?</h2>
+            <p>Smökki Wed 15.2.</p>
+
+            <h2>Dress code?</h2>
+            <p>Get your most colorful Hawaiian shirts and coolest shades and step into the tropical mood!</p>
+
+            <h2>Ticket sales?</h2>
+            <p>Ticket sales start at the Winter Day event on 17.1 at Alvarin aukio.</p>
+
+            <h2>Price?</h2>
+            <p>8€ which includes the sunniest party and the hottest badge!</p>
+            <p>35€ for VIPs who want the exclusive experience.</p>
+
+            <h2>What else?</h2>
+            <p>
+              Follow us on <a href="https://www.instagram.com/ylikellotus/" target="_blank">Instagram</a> and
+              <a href="http://t.me/ylikellotustiedotus" target="_blank">Telegram</a> @Ylikellotus, so you don't miss any
+              relevant information! Also, remember to bring some cash with you.
+            </p>
+            <p>The event is 18+.</p>
+          </text>
+        </div>
+      </main>
+      <script src="ball.js"></script>
+      <script src="countdown.js"></script>
+      <script src="lang.js"></script>
+    </div>
   </body>
 </html>
