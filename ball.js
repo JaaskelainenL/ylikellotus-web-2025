@@ -71,11 +71,11 @@ function drawRotatedBall(x, y, w, h, degrees) {
 }
 
 function update() {
+  height = document.getElementById('body').offsetHeight
+  width = document.body.clientWidth
   canvas.width = width * window.devicePixelRatio
   canvas.height = height * window.devicePixelRatio
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  height = document.getElementById('body').offsetHeight
-  width = document.body.clientWidth
   const slowdownRate = 100
   dx -= dx / slowdownRate
   dy -= dy / slowdownRate
