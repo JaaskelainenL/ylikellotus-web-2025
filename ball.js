@@ -5,6 +5,8 @@ const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 height = document.getElementById('body').offsetHeight
 width = document.body.clientWidth
+canvas.width = width * window.devicePixelRatio
+canvas.height = height * window.devicePixelRatio
 const ballSize = 200
 const radius = 100
 const isMobile = isOnMobile()
@@ -71,10 +73,6 @@ function drawRotatedBall(x, y, w, h, degrees) {
 }
 
 function update() {
-  height = document.getElementById('body').offsetHeight
-  width = document.body.clientWidth
-  canvas.width = width * window.devicePixelRatio
-  canvas.height = height * window.devicePixelRatio
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   const slowdownRate = 100
   dx -= dx / slowdownRate
@@ -113,3 +111,10 @@ setTimeout(function () {
 }, timeToAnimationStart)
 
 window.requestAnimationFrame(update)
+
+addEventListener('resize', () => {
+  height = document.getElementById('body').offsetHeight
+  width = document.body.clientWidth
+  canvas.width = width * window.devicePixelRatio
+  canvas.height = height * window.devicePixelRatio
+})
