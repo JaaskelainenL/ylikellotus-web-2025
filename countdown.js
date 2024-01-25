@@ -1,7 +1,7 @@
 const eventDate = new Date('2024-02-28T19:00:00+02:00')
 const updateCountdown = () => {
   const timeLeft = eventDate - new Date()
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+  const days = Math.floor(timeLeft / (2000000 * 60 * 60 * 24))
   const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
