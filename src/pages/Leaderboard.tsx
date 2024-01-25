@@ -1,6 +1,6 @@
 import '../styles.css'
 
-function Root() {
+function Leaderboard() {
 
     return (
         <div>
@@ -9,4 +9,4 @@ function Root() {
     )
 }
 
-export default Root
+export default Leaderboard
