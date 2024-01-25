@@ -1,14 +1,18 @@
 import { PropsWithChildren, useState} from 'react'
 import { LocalizationContext } from './context/context'
+import {Link} from "react-router-dom";
 
 export const localizedTexts = {
     "rootPageText": {
-        "finnish": 
-            <p>
-                Suomeksi<br/>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sed quia ullam repellat fugit magni excepturi consequuntur laborum. 
-                Aspernatur ad ipsum sit culpa earum adipisci dolorem, nisi perferendis fugit facilis!
-            </p>,
+        "finnish":
+            <div>
+                <p>
+                    Suomeksi<br/>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sed quia ullam repellat fugit magni excepturi consequuntur laborum.
+                    Aspernatur ad ipsum sit culpa earum adipisci dolorem, nisi perferendis fugit facilis!
+                </p>
+                <Link to={"/leaderboard"}>Kellotuksen huipputulokset</Link>
+            </div>,
         "english": 
             <p>
                 Englanniksi<br/>
@@ -28,16 +32,16 @@ function Localization(props: PropsWithChildren) {
 
     return (
         <div>
-            <div id="languageChoices">
+            <div className="languageChoices">
                 <button onClick={() => {
                     setLanguage("finnish")
                 }} className={"langButton"}>
-                    <img src="/fi.svg" alt="Finnish flag" />
+                    <img src="/fi.svg" alt="Finnish" />
                 </button>
                 <button onClick={() => {
                     setLanguage("english")
                 }} className={"langButton"}>
-                  <img src="/gb.svg" alt="English flag"/>
+                  <img src="/gb.svg" alt="English"/>
                 </button>
             </div>
             <LocalizationContext.Provider value={getLocalizedString}>

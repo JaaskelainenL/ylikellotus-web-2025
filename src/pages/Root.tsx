@@ -1,14 +1,13 @@
-import './styles.css'
-import Countdown from './components/Countdown'
+import '../styles.css'
+import Countdown from '../components/Countdown.tsx'
 import { useContext } from 'react'
-import { LocalizationContext } from './context/context'
+import { LocalizationContext } from '../context/context.tsx'
 
 function Root() {
 
   const languageContext = useContext(LocalizationContext)
 
   return (
-    <div>
     <div>
       <main>
         <div>
@@ -18,7 +17,6 @@ function Root() {
           {languageContext("rootPageText")}
         </div>
       </main>
-    </div>
   </div>
   )
 }
