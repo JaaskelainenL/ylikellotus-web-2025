@@ -1,3 +1,25 @@
+# Ylikellotus website
+
+## Getting the project running
+
+### Dependencies
+
+* node.js
+* npm
+* yarn (install with npm install -g yarn)
+
+### Installing node deps
+
+```bash
+yarn install
+```
+
+### Starting dev env
+
+```bash
+yarn dev
+```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
