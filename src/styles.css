@@ -10,6 +10,8 @@
 
 :root {
   scroll-behavior: smooth;
+  background-image: url("./Background.png");
+  background-size: 100%;
 }
 
 p {
@@ -45,4 +47,42 @@ body {
 
 main {
     margin-top: 20%;
+}
+
+.logo {
+  width: 90%
+}
+
+.scroll-container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.scroll-container > * {
+  width: 100%;
+}
+
+.scroll-center {
+  margin: auto;
+  width: 94%;
+  margin-top: -10px;
+  padding-top: 10px;
+  margin-bottom: -10px;
+  padding-bottom: 20px;
+  background: url("/ScrollMiddle.png");
+  background-size: 100%;
+}
+
+.scroll-center > * {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.cauldron {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  margin: auto;
 }

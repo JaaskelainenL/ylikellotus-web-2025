@@ -5,16 +5,24 @@ import { LocalizationContext } from '../context/context.tsx'
 
 function Root() {
 
-  const languageContext = useContext(LocalizationContext)
+  const localization = useContext(LocalizationContext)
 
   return (
     <div>
       <main>
+        <img src='/Logo.png' className='logo'/>
+        <div className='scroll-container'>
+          <img src='/ScrollTop.png'/>
+          <div className='scroll-center'>
+            {localization("rootPageText")}
+          </div>
+          <img src='/ScrollBottom.png' className='scroll-bottom'/>
+          <img src='/CauldronRGB_Mobile.png' className='cauldron'/>
+        </div>
         <div>
           <Countdown/>
         </div>
         <div>
-          {languageContext("rootPageText")}
         </div>
       </main>
   </div>
