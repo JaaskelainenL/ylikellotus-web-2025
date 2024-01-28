@@ -9,6 +9,7 @@ import {
 import Localization from './Localization.tsx';
 import Leaderboard from "./pages/Leaderboard.tsx";
 import LeaderboardAdmin from "./pages/LeaderboardAdmin.tsx";
+import Game from './pages/Game.tsx';
 
 // Hash router works with GH pages out of the box
 
@@ -24,6 +25,10 @@ const router = createHashRouter([
     {
         path: "/leaderboard-admin",
         element: <LeaderboardAdmin></LeaderboardAdmin>
+    },
+    {
+        path: "/game",
+        element: <Game/>
     },
 ]);
 

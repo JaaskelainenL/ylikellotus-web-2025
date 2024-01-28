@@ -46,3 +46,8 @@ body {
 main {
     margin-top: 20%;
 }
+
+.bottle {
+  width: 70%;
+  max-width: 400px;
+}
