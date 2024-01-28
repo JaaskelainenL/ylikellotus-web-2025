@@ -31,7 +31,7 @@ function Countdown() {
 
     return (
     <div>
-        <p>{date}</p>
+        <h2>{date}</h2>
     </div>
     )
 }
