@@ -9,7 +9,7 @@ function Leaderboard() {
         setLoading(true)
         fetch("https://ylikellotus.lajp.fi/")
         .then(response => response.json())
-        .then(json => console.log(json))
+        .then(json => setUsers(json))
         .finally(() => {
             setLoading(false)
         })
@@ -20,16 +20,17 @@ function Leaderboard() {
         <div>
             <table>
                 <tr>
-                    <td></td>
+                    <td>Sijoitus</td>
                     <td>Nimi</td>
                     <td>Aika</td>
                     <td>Kilta</td>
                 </tr>
-                {users.map(player => (
-                <tr key={player.id}>
+                {users.slice(0,5).map(player => (
+                <tr>
+                    <td>{player.id}</td>
                     <td>{player.name}</td>
-                    <td>{player.time}</td>
-                    <td>{player.guild}</td>
+                    <td>{(player.time / 1000).toString() + "s"}</td>
+                    <td>{player.email}</td>
                 </tr>
                 ))}
             </table>
