@@ -10,13 +10,6 @@
 
 :root {
   scroll-behavior: smooth;
-  background-image: url("./Background.png");
-  background-size: 100%;
-}
-
-p {
-  font-size: 1.5rem;
-  font-family: Dutch Mediaeval;
 }
 
 body {
@@ -24,7 +17,15 @@ body {
   position: relative;
   text-align: center;
   margin: 0;
-  width: 100%;
+  font-size: large;
+  background-image: url("./Background.png");
+  /* Setting the color sets the color above and below the image on certain browsers (at least Safari) */
+  background-color: black;
+  background-size: 100%;
+}
+
+.countdown {
+  font-size: 2rem;
 }
 
 .languageChoices {
@@ -49,21 +50,53 @@ main {
     margin-top: 75px;
 }
 
+@keyframes logo-blink {
+  0% {
+    filter: drop-shadow(0 0 0.5rem #8d73da);
+  }
+
+  25% {
+    filter: drop-shadow(0 0 0.5rem #8d73da44);
+  }
+
+  60% {
+    filter: drop-shadow(0 0 0.5rem #da73c9c4);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 0.5rem #8d73da);
+  }
+}
+
 .logo {
   width: 90%;
-  max-width: 1000px
+  max-width: 1000px;
+  
+  animation: 4s linear 0s infinite alternate none running logo-blink;
+}
+
+
+
+.scroll-wizards-container {
+  width: 100%;
+  margin: auto;
+  position: relative;
 }
 
 .scroll-container {
-  width: 90%;
-  max-width: 900px;
+  width: 100%;
   margin: auto;
   position: relative;
   overflow: hidden;
+  display: block;
 }
 
 .scroll-container > * {
   width: 100%;
+}
+
+.scroll-bottom-padding {
+  height: 100px;
 }
 
 @keyframes openscroll {
@@ -85,19 +118,23 @@ main {
 
 .scroll-center {
   margin: auto;
-  width: 94%;
+  width: 100%;
   margin-top: -10px;
   padding-top: 10px;
   margin-bottom: -10px;
   padding-bottom: 20px;
-  background: url("/ScrollMiddle.png");
-  background-size: 100%;
+  background: url("/ScrollMiddleNew.png");
+  background-size: 103%;
+  background-blend-mode: multiply;
+  background-clip: border-box;
+  background-position: center;
   z-index: -1;
 }
 
 .animated-scroll-piece {
   top: calc(-100% + 330px);
-  animation: openscroll 2s;
+  animation-name: openscroll;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   position: relative;
 }
@@ -116,14 +153,19 @@ main {
 
 }
 
+.scroll-top {
+  position: relative;
+  z-index: 3;
+}
+
 .scroll-center > * {
-  padding-left: 90px;
-  padding-right: 90px;
+  padding-left: 22%;
+  padding-right: 22%;
 }
 
 .cauldron {
   width: 100%;
-  height: 200px;
+  height: 150px;
   position: absolute;
   bottom: -10px;
   margin: auto;
@@ -134,7 +176,7 @@ main {
 .cauldron-left {
   background-image: url("/CauldronR.png");
   background-size: 100% 100%;
-  width: 200px;
+  width: 150px;
   height: 100%;
   margin: auto;
   display: none;
@@ -143,7 +185,7 @@ main {
 .cauldron-center {
   background-image: url("/CauldronRGB_Mobile.png");
   background-size: 100% 100%;
-  width: 200px;
+  width: 150px;
   height: 100%;
   margin: auto;
 }
@@ -151,16 +193,53 @@ main {
 .cauldron-right {
   background-image: url("/CauldronB.png");
   background-size: 100% 100%;
-  width: 200px;
+  width: 150px;
   height: 100%;
   margin: auto;
   display: none;
 }
 
+.wizard {
+  position: absolute;
+  height: auto;
+  width: 23vw;
+  overflow: show;
+  z-index: 2;
+  display: none;
+}
+
+.wizard-left {
+  top: 0;
+  left: 0;
+}
+
+.wizard-right {
+  top: 0;
+  right: 0;
+}
+
 @media (min-width: 1000px) {
+
+  .countdown {
+    font-size: 3rem;
+  }
+
+  .wizard {
+    display: block;
+  }
+
+  body {
+    font-size: x-large;
+  }
+
+  .scroll-container {
+    width: calc(100% - 2 * 23vw);
+  }
+
   .cauldron-center {
     background-image: url("/CauldronG.png");
   }
+
   .cauldron-left {
     display: block;
   }

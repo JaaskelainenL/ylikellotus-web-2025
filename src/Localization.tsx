@@ -1,6 +1,5 @@
 import { PropsWithChildren, useState} from 'react'
 import { LocalizationContext } from './context/context'
-import {Link} from "react-router-dom";
 
 export const localizedTexts = {
     "rootPageText": {
@@ -22,11 +21,10 @@ export const localizedTexts = {
                     Hinta (sisältää haalarimerkin): 8€ / 35€ VIP <br/>
                     DC: Fantasia (tai haalarit) <br/>
 
-                    <a href="https://t.me/ylikellotus" target='blank' className='tg-logo'>
+                    <a href="https://t.me/ylikellotustiedotus" target='blank' className='tg-logo'>
                         <img src="Logo.svg"/>
                     </a>
                 </p>
-                <Link to={"/leaderboard"}><p>Kellotusklpailun huipputulokset</p></Link>
             </div>,
         "english": 
             <div>
@@ -46,11 +44,10 @@ export const localizedTexts = {
                     Price (includes an overall patch): 8€ / 35€ VIP  <br/>
                     DC: Fantasy (or overalls) <br/>
         
-                    <a href="https://t.me/ylikellotus" target='blank' className='tg-logo'>
+                    <a href="https://t.me/ylikellotustiedotus" target='blank' className='tg-logo'>
                         <img src="Logo.svg"/>
                     </a>
                 </p>
-                <Link to={"/leaderboard"}><p>Kellotuksen huipputulokset</p></Link>
         </div>
     }
 }
