@@ -1,35 +1,37 @@
 import '../styles.css'
+import { useEffect, useState} from "react"
 
 function Leaderboard() {
 
-    let names = ["Juhani Marjatta Korhonen", "moikkelis", "koikkelis"];
-    let times = ["22", "35", "46"];
-    let guilds = ["TiK","SiK","KiK"];
+    const [users, setUsers] = useState([])
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        setLoading(true)
+        fetch("https://ylikellotus.lajp.fi/")
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .finally(() => {
+            setLoading(false)
+        })
+    }, [])
+    
 
     return (
         <div>
             <table>
                 <tr>
+                    <td></td>
                     <td>Nimi</td>
                     <td>Aika</td>
                     <td>Kilta</td>
                 </tr>
-                <tr>
-                    <td>{names[0]}</td>
-                    <td>{times[0]}</td>
-                    <td>{guilds[0]}</td>
+                {users.map(player => (
+                <tr key={player.id}>
+                    <td>{player.name}</td>
+                    <td>{player.time}</td>
+                    <td>{player.guild}</td>
                 </tr>
-                <tr>
-                    <td>{names[1]}</td>
-                    <td>{times[1]}</td>
-                    <td>{guilds[1]}</td>
-                </tr>
-                <tr>
-                    <td>{names[2]}</td>
-                    <td>{times[2]}</td>
-                    <td>{guilds[2]}</td>
-                </tr>
-
+                ))}
             </table>
         </div>
     )

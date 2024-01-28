@@ -27,6 +27,23 @@ body {
   width: 100%;
 }
 
+table {
+  position: relative;
+  margin: 2em 0;
+  width: 47%;
+  color: #fff;
+  text-align: left;
+  border-collapse: collapse;
+  background-color: rgba(45,45,55, 0.8); 
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+th, td { 
+  padding: 1em 1.5em; 
+  font-weight: normal;
+  border: 1px solid #974;
+}
+
 .languageChoices {
   position: fixed;
   top: 10px;
