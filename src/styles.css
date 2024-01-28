@@ -46,3 +46,9 @@ body {
 main {
     margin-top: 20%;
 }
+
+.row {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
