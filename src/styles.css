@@ -19,7 +19,7 @@ body {
   margin: 0;
   font-size: large;
   background-image: url("./Background.png");
-  /* Setting the color sets the color above and below the image on certain browsers (at least Safari) */
+  /* Setting the color sets the color above and below the actual bg image on certain browsers (at least Safari) */
   background-color: black;
   background-size: 100%;
 }
@@ -71,7 +71,6 @@ main {
 .logo {
   width: 90%;
   max-width: 1000px;
-  
   animation: 4s linear 0s infinite alternate none running logo-blink;
 }
 
