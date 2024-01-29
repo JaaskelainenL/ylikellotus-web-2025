@@ -6,7 +6,7 @@ export const localizedTexts = {
         "finnish":
             <div>
                 <p>
-                    Tervetuloa Ylikellotukseen - Fantasian lumoavaan maailmaan! 
+                    Tervetuloa Ylikellotukseen - TiK:in fuksibileisiin - Fantasian lumoavaan maailmaan! 
                     <br/><br/>
                     Oletko valmiina heittäytymään maagiseen seikkailuun? Ylikellotus tarjoaa unohtumattoman illanvieton täynnä taikaa, seikkailua ja loistavaa seuraa! 
                     <br/><br/>
@@ -21,15 +21,18 @@ export const localizedTexts = {
                     Hinta (sisältää haalarimerkin): 8€ / 35€ VIP <br/>
                     DC: Fantasia (tai haalarit) <br/>
 
-                    <a href="https://t.me/ylikellotustiedotus" target='blank' className='tg-logo'>
-                        <img src="Logo.svg"/>
+                    <a href="https://t.me/ylikellotustiedotus" target='blank' className='app-logo'>
+                        <img src="tgLogo.svg"/>
+                    </a>
+                    <a href="https://kide.app/events/3635cc2f-6d53-4120-8c24-05bf70c4f512" target='blank' className='app-logo'>
+                        <img src="kideLogo.png"/>
                     </a>
                 </p>
             </div>,
         "english": 
             <div>
                 <p>
-                    Welcome to Ylikellotus - the magical world of fantasy! 
+                    Welcome to Ylikellotus - Computer science guild's fuksi party - the magical world of fantasy! 
                     <br/><br/>
                     Ready for a magical adventure? Ylikellotus offers an unforgettable evening filled with magic, adventure, and great company!
                     <br/><br/>
@@ -45,7 +48,10 @@ export const localizedTexts = {
                     DC: Fantasy (or overalls) <br/>
         
                     <a href="https://t.me/ylikellotustiedotus" target='blank' className='tg-logo'>
-                        <img src="Logo.svg"/>
+                        <img src="tgLogo.svg"/>
+                    </a>
+                    <a href="https://kide.app/events/3635cc2f-6d53-4120-8c24-05bf70c4f512" target='blank' className='app-logo'>
+                        <img src="kideLogo.png"/>
                     </a>
                 </p>
         </div>

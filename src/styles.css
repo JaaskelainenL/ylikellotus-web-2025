@@ -138,16 +138,17 @@ main {
   position: relative;
 }
 
-.tg-logo {
+.app-logo {
   width: 100px;
   height: 100px;
   position: relative;
-  display: block;
+  display: inline-block;
   padding-top: 10px;
+  padding-inline: 10px;
   margin: auto;
 }
 
-.tg-logo > * {
+.app-logo > * {
   width: 100%;
 
 }
