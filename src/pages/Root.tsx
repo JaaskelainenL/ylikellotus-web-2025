@@ -1,6 +1,6 @@
 import '../styles.css'
 import Countdown from '../components/Countdown.tsx'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { LocalizationContext } from '../context/context.tsx'
 
 function Root() {
