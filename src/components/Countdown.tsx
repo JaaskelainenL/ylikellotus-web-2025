@@ -31,7 +31,7 @@ function Countdown() {
 
     return (
     <div>
-        <p>{date}</p>
+        <p className='countdown'>{date}</p>
     </div>
     )
 }
