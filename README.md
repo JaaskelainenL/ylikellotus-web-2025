@@ -20,6 +20,18 @@ yarn install
 yarn dev
 ```
 
+## Deployment
+
+### Dependencies
+
+* gh-pages (install with npm i -g gh-pages)
+
+### Deplyoment to branch `gh-pages` in GitHub
+
+```bash
+yarn deploy
+```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
