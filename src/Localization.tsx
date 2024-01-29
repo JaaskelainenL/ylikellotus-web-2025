@@ -6,10 +6,9 @@ export const localizedTexts = {
         "finnish":
             <div>
                 <p>
-                    Tervetuloa Ylikellotukseen - TiK:in fuksibileisiin - Fantasian lumoavaan maailmaan! 
+                    Tervetuloa Ylikellotukseen - Fantasian lumoavaan maailmaan! 
                     <br/><br/>
-                    Oletko valmiina heittäytymään maagiseen seikkailuun? Ylikellotus tarjoaa unohtumattoman illanvieton täynnä taikaa, seikkailua ja loistavaa seuraa! 
-                    <br/><br/>
+                    Oletko valmiina heittäytymään maagiseen seikkailuun? TiK:in fuksibileet tarjoaa unohtumattoman illanvieton täynnä taikaa, seikkailua ja loistavaa seuraa!<br/><br/>
                     Luvassa on maaginen ilta täynnä yllätyksiä ja tietenkin mahtavaa musiikkia. Tule ystäviesi kanssa tai tutustu uusiin kasvoihin rennossa Ylikellotuksen porukassa. Lipun hinta on vain 8€, mutta jos mielit VIP-kohtelua, nappaa VIP-lippu hintaan 35€! VIP-lippu sisältää mahtavia etuja. Ole nopea, VIP-lippuja on rajoitettu määrä! 
                     <br/><br/>
                     Nähdään 28. helmikuuta, kun Smökissä fantasia herää eloon! Ota kaverisi mukaan ja uppoudu fantasiamaailman syvyyksiin! 
@@ -32,9 +31,9 @@ export const localizedTexts = {
         "english": 
             <div>
                 <p>
-                    Welcome to Ylikellotus - Computer science guild's fuksi party - the magical world of fantasy! 
+                    Welcome to Ylikellotus - the magical world of fantasy! 
                     <br/><br/>
-                    Ready for a magical adventure? Ylikellotus offers an unforgettable evening filled with magic, adventure, and great company!
+                    Ready for a magical adventure? Computer science guild's fuksi party offers an unforgettable evening filled with magic, adventure, and great company!
                     <br/><br/>
                     Expect a night full of surprises and, of course, fantastic music. Come with your friends or meet new faces in the relaxed atmosphere of Ylikellotus. The ticket price is only €8, but if you desire VIP treatment, grab a VIP ticket with fantastic perks for €35! But be quick, as VIP tickets are limited! 
                     <br/><br/>
