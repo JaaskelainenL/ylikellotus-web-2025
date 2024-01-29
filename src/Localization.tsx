@@ -46,7 +46,7 @@ export const localizedTexts = {
                     Price (includes an overall patch): 8€ / 35€ VIP  <br/>
                     DC: Fantasy (or overalls) <br/>
         
-                    <a href="https://t.me/ylikellotustiedotus" target='blank' className='tg-logo'>
+                    <a href="https://t.me/ylikellotustiedotus" target='blank' className='app-logo'>
                         <img src="tgLogo.svg"/>
                     </a>
                     <a href="https://kide.app/events/3635cc2f-6d53-4120-8c24-05bf70c4f512" target='blank' className='app-logo'>
