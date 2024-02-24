@@ -248,3 +248,19 @@ main {
     display: block;
   }
 }
+
+.leaderboard {
+  text-align: center;
+}
+
+table {
+  border-spacing: 30px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+td {
+  max-width: 15ch;
+  word-wrap: break-word;
+}

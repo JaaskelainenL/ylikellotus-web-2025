@@ -2,6 +2,24 @@ import { PropsWithChildren, useState} from 'react'
 import { LocalizationContext } from './context/context'
 
 export const localizedTexts = {
+    "leaderboardHeaders" : {
+        "finnish":
+        <thead>
+        <tr>
+          <th>Nimi</th>
+          <th>Kilta</th>
+          <th>Aika</th>
+        </tr>
+      </thead>,
+        "english": 
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Guild</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+    },
     "rootPageText": {
         "finnish":
             <div>
