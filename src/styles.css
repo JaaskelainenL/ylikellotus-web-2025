@@ -253,3 +253,20 @@ main {
   justify-content: center;
   padding: 10px 0;
 }
+
+button {
+  border-radius: 5px;
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: large;
+  margin: 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: large;
+  margin: 8px;
+  box-sizing: border-box;
+}
