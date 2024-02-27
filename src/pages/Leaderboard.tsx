@@ -1,5 +1,5 @@
 import '../styles.css'
-import React, { useEffect , useContext} from 'react';
+import React, { useEffect , useContext, useState} from 'react';
 import { LocalizationContext } from '../context/context.tsx';
 
 function Leaderboard() {
@@ -7,6 +7,7 @@ function Leaderboard() {
   const localization = useContext(LocalizationContext)
 
   const [tableData, setTableData] = React.useState<{ id: number, name: String, guild: String, time: number }[]>([]);
+  const [error, setError] = React.useState<string | null>(null);
   useEffect(() => {
     fetch("https://ylikellotus.lajp.fi")
       .then((res) => {
@@ -19,14 +20,20 @@ function Leaderboard() {
         console.log("Leaderbopard: ", res);
         setTableData(res);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        setError("ERROR WITH FETCHING LEADERBOARD DATA");
+      });
+      
   }, []);
   return (
     <div className='scroll-container'>
       <img src='/ScrollTopNew.png' className='scroll-top' />
       <div className='scroll-center'>
         <div>
-        {tableData !== null ? (
+        {error !== null ? (
+          <p>{error}</p>
+        ) : (
           <table>
             {localization("leaderboardHeaders")}    
             <tbody>
@@ -34,13 +41,11 @@ function Leaderboard() {
                 <tr key={row.id}>
                   <td>{row.name}</td>
                   <td>{row.guild}</td>
-                  <td>{row.time}</td>
+                  <td>{(row.time/1000).toPrecision(4)} s</td>
                 </tr>
               ))}
             </tbody>
           </table>
-        ) : (
-          <p>Loading leaderboard</p>
         )}
         </div>
         <div className="scroll-bottom-padding" />
