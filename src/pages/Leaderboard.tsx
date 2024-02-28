@@ -34,18 +34,26 @@ function Leaderboard() {
         {error !== null ? (
           <p>{error}</p>
         ) : (
-          <table>
-            {localization("leaderboardHeaders")}    
-            <tbody>
-              {tableData.slice(0,10000).map((row) => (
-                <tr key={row.id}>
-                  <td>{row.name}</td>
-                  <td>{row.guild}</td>
-                  <td>{(row.time/1000).toPrecision(4)} s</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div>
+            {localization("leaderboardText")}
+            {tableData.length == 0 ? 
+              localization("noClockersText") :
+              <table>
+                {localization("leaderboardHeaders")}    
+                <tbody>
+                  {
+                    tableData.slice(0,10000).map((row) => (
+                      <tr key={row.id}>
+                        <td>{row.name}</td>
+                        <td>{row.guild}</td>
+                        <td>{(row.time/1000).toPrecision(4)} s</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            }
+          </div>
         )}
         </div>
         <div className="scroll-bottom-padding" />
