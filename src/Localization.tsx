@@ -25,7 +25,7 @@ export const localizedTexts = {
             <thead>
                 <tr>
                     <th>Guild</th>
-                    <th>Clockers</th>
+                    <th>Scores</th>
                     <th>Average</th>
                     <th>Median</th>
                 </tr>
