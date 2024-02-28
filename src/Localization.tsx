@@ -53,6 +53,7 @@ export const localizedTexts = {
         "finnish":
             <thead>
                 <tr>
+                    <th></th>
                     <th>Nimi</th>
                     <th>Kilta</th>
                     <th>Aika</th>
@@ -61,6 +62,7 @@ export const localizedTexts = {
         "english":
             <thead>
                 <tr>
+                    <th></th>
                     <th>Name</th>
                     <th>Guild</th>
                     <th>Time</th>

@@ -96,8 +96,9 @@ function Leaderboard() {
                 {localization("leaderboardHeaders")}    
                 <tbody>
                   {
-                    tableData.slice(0,50).map((row) => (
+                    tableData.slice(0,50).map((row, index) => (
                       <tr key={row.id}>
+                        <td>[{index}]</td>
                         <td>{row.name}</td>
                         <td>{row.guild.toUpperCase().replace('TIK', 'TiK').replace('ATHENE', 'Athene').replace('PRODEKO', 'Prodeko').replace('INKUBIO', 'Inkubio')}</td>
                         <td>{(row.time/1000).toFixed(2)} s</td>
