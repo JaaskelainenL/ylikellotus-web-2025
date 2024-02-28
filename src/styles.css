@@ -138,16 +138,17 @@ main {
   position: relative;
 }
 
-.tg-logo {
+.app-logo {
   width: 100px;
   height: 100px;
   position: relative;
-  display: block;
+  display: inline-block;
   padding-top: 10px;
+  padding-inline: 10px;
   margin: auto;
 }
 
-.tg-logo > * {
+.app-logo > * {
   width: 100%;
 
 }
@@ -248,6 +249,7 @@ main {
   }
 }
 
+
 .row {
   display: flex;
   justify-content: center;
@@ -270,3 +272,18 @@ input {
   margin: 8px;
   box-sizing: border-box;
 }
+
+table {
+  margin-top: 50px;
+  border-spacing: 30px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+td {
+  max-width: 17ch;
+  word-wrap: break-word;
+  width: 25%;
+}
+
