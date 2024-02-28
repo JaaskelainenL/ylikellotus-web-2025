@@ -1,7 +1,26 @@
 import { PropsWithChildren, useState } from 'react'
 import { LocalizationContext } from './context/context'
+import { Link } from 'react-router-dom'
 
 export const localizedTexts = {
+    "noClockersText": {
+        "finnish": <p>
+            Kukaan ei ole vielä kellottanut :(
+        </p>,
+        "english": <p>
+            Nobody has clocked yet :(
+        </p>
+    },
+    "leaderboardText": {
+        "finnish": <div>
+            <h1>Parhaat kellottajat tällä hetkellä</h1>
+            <p>Osallistu kellotuskilpailuun päästäksesi tälle listalle!</p>
+        </div>,
+        "english": <div>
+            <h1>Best clockers at the moment</h1>
+            <p>Attend the clocking competition to get on this list!</p>
+        </div>
+    },
     "leaderboardHeaders": {
         "finnish":
             <thead>
@@ -19,6 +38,7 @@ export const localizedTexts = {
                     <th>Time</th>
                 </tr>
             </thead>
+            
     },
     "rootPageText": {
         "finnish":
@@ -37,6 +57,9 @@ export const localizedTexts = {
                     Päivämäärä: 28. helmikuuta <br />
                     Hinta (sisältää haalarimerkin): 8€ / 35€ VIP <br />
                     DC: Fantasia (tai haalarit) <br />
+                    <br/>
+                    <Link to="/leaderboard">Kellotuskilpailun tulokset</Link>
+                    <br/>
 
                     <a href="https://t.me/ylikellotustiedotus" target='blank' className='app-logo'>
                         <img src="tgLogo.svg" />
@@ -63,6 +86,9 @@ export const localizedTexts = {
                     When: February 28th  <br />
                     Price (includes an overall patch): 8€ / 35€ VIP  <br />
                     DC: Fantasy (or overalls) <br />
+                    <br/>
+                    <Link to="/leaderboard">Clocking competition leaderboard</Link>
+                    <br/>
 
                     <a href="https://t.me/ylikellotustiedotus" target='blank' className='app-logo'>
                         <img src="tgLogo.svg" />
