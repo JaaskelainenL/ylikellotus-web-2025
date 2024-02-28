@@ -22,24 +22,27 @@ function Leaderboard() {
   const [tableData, setTableData] = React.useState<Score[]>([]);
   const [guilds, setGuilds] = React.useState<Guild[]>([]);
   const [error, setError] = React.useState<string | null>(null);
+
   useEffect(() => {
-    setInterval(() => {
-      fetch("https://ylikellotus.lajp.fi")
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error("Failed to fetch leaderboard data");
-          }
-          return res.json();
-        })
-        .then((res) => {
-          setTableData(res);
-          setGuilds(grouped(res));
-        })
-        .catch((error) => {
-          setError("ERROR WITH FETCHING LEADERBOARD DATA: " + error);
-        });
-    }, 5000)
+    refreshScores();
   }, []);
+  const refreshScores = () => {
+    fetch("https://ylikellotus.lajp.fi")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch leaderboard data");
+        }
+        return res.json();
+      })
+      .then((res) => {
+        setTableData(res);
+        setGuilds(grouped(res));
+      })
+      .catch((error) => {
+        setError("ERROR WITH FETCHING LEADERBOARD DATA: " + error);
+      });
+    setTimeout(refreshScores, 5000);
+  }
 
   const grouped = (data: Score[]) => {
     let result: Guild[] = []
@@ -96,7 +99,7 @@ function Leaderboard() {
                     tableData.slice(0,50).map((row) => (
                       <tr key={row.id}>
                         <td>{row.name}</td>
-                        <td>{row.guild}</td>
+                        <td>{row.guild.toUpperCase().replace('TIK', 'TiK').replace('ATHENE', 'Athene').replace('PRODEKO', 'Prodeko').replace('INKUBIO', 'Inkubio')}</td>
                         <td>{(row.time/1000).toFixed(2)} s</td>
                       </tr>
                     ))
