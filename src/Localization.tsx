@@ -11,20 +11,49 @@ export const localizedTexts = {
             Nobody has clocked yet :(
         </p>
     },
-    "leaderboardText": {
+    "guildsHeader": {
+        "finnish":
+            <thead>
+                <tr>
+                    <th>Kilta</th>
+                    <th>Kellottajat</th>
+                    <th>Keskiarvo</th>
+                    <th>Mediaani</th>
+                </tr>
+            </thead>,
+        "english":
+            <thead>
+                <tr>
+                    <th>Guild</th>
+                    <th>Scores</th>
+                    <th>Average</th>
+                    <th>Median</th>
+                </tr>
+            </thead>
+    },
+    "guildsText": {
         "finnish": <div>
-            <h1>Parhaat kellottajat tällä hetkellä</h1>
+            <h1>Top 5 kiltaa</h1>
             <p>Osallistu kellotuskilpailuun päästäksesi tälle listalle!</p>
         </div>,
         "english": <div>
-            <h1>Best clockers at the moment</h1>
+            <h1>Top 5 guilds</h1>
             <p>Attend the clocking competition to get on this list!</p>
+        </div>
+    },
+    "leaderboardText": {
+        "finnish": <div>
+            <h1>Parhaat kellottajat</h1>
+        </div>,
+        "english": <div>
+            <h1>Best clockers</h1>
         </div>
     },
     "leaderboardHeaders": {
         "finnish":
             <thead>
                 <tr>
+                    <th></th>
                     <th>Nimi</th>
                     <th>Kilta</th>
                     <th>Aika</th>
@@ -33,6 +62,7 @@ export const localizedTexts = {
         "english":
             <thead>
                 <tr>
+                    <th></th>
                     <th>Name</th>
                     <th>Guild</th>
                     <th>Time</th>

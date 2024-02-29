@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './pages/Root.tsx'
 
@@ -28,9 +27,7 @@ const router = createHashRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
     <Localization>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
     </Localization>
-  </React.StrictMode>,
 )

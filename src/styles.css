@@ -218,6 +218,37 @@ main {
   right: 0;
 }
 
+button {
+  border-radius: 5px;
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: large;
+  margin: 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: large;
+  margin: 8px;
+  box-sizing: border-box;
+}
+
+table {
+  margin-top: 50px;
+  border-spacing: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+td {
+  max-width: 17ch;
+}
+
 @media (min-width: 1000px) {
 
   .countdown {
@@ -249,6 +280,12 @@ main {
   }
 }
 
+@media (max-width: 1000px) {
+  table {
+    font-size: small;
+  }
+}
+
 
 .row {
   display: flex;
@@ -256,34 +293,4 @@ main {
   padding: 10px 0;
 }
 
-button {
-  border-radius: 5px;
-  background-color: purple;
-  color: white;
-  border: none;
-  padding: 5px;
-  font-size: large;
-  margin: 5px;
-}
-
-input {
-  padding: 10px;
-  font-size: large;
-  margin: 8px;
-  box-sizing: border-box;
-}
-
-table {
-  margin-top: 50px;
-  border-spacing: 30px 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-td {
-  max-width: 17ch;
-  word-wrap: break-word;
-  width: 25%;
-}
 
