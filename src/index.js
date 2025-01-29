@@ -86,11 +86,17 @@ anime({
 });
 
 const updateDate = () => {
+  const target = new Date("2025-02-26 18:00:00 GMT+0300")
   const now = new Date();
-  const days = now.getDate();
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
+
+  const dif = target.getTime() - now.getTime();
+
+
+  const days = Math.floor(dif / 86400000);
+  const hours = Math.round((dif % 86400000) / 3600000)
+  const minutes = Math.round(((dif % 86400000) % 3600000) / 60000);
+  const seconds = Math.round(((dif % 86400000) % 60000) / 1000);
+
 
   document.getElementById('days').style.setProperty('--value', days);
   document.getElementById('hours').style.setProperty('--value', hours);
@@ -103,3 +109,22 @@ const updateDate = () => {
 updateDate();
 
 updateDate();
+
+
+
+const getRandomGame = () => {
+
+    const games = ["bh"];
+
+    const game = games[Math.floor(Math.random() * games.length)]
+
+
+    var ifrm = document.createElement("iframe");
+    ifrm.setAttribute("src", "games/"+game+"/index.html");
+    ifrm.style.width = "300px";
+    ifrm.style.height = "400px";
+    document.getElementById("gameHolder").appendChild(ifrm);
+
+
+}
+getRandomGame()
