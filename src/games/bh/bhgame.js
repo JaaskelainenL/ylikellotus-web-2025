@@ -40,7 +40,7 @@ var gameCanvas = {
 
 function summonWave(){
     wave+=1;
-    const max=5
+    const max=7
     var newWave = Math.floor(Math.random()*max)
     if(lastWave===newWave){
         newWave = newWave+1 %max
@@ -55,14 +55,14 @@ function summonWave(){
 
         case 1:
             enemies.push(new spinner(125,30));
-            enemies.push(new gunner(125,30,bulletSpeed*(-0.5)));
-            enemies.push(new gunner(125,30,bulletSpeed*(0.5)));
+            enemies.push(new gunner(125,30,[bulletSpeed*(-0.5),0]));
+            enemies.push(new gunner(125,30,[bulletSpeed*(0.5),0]));
             break;
 
         case 2:
-            enemies.push(new mover(269,15,bulletSpeed*2+Math.random()*0.5));
-            enemies.push(new mover(30,55,bulletSpeed*2+Math.random()*0.5));
-            enemies.push(new mover(150,105,bulletSpeed*2+Math.random()*0.5));
+            enemies.push(new mover(269,15,[bulletSpeed*2+Math.random()*0.5,0]));
+            enemies.push(new mover(30,55,[bulletSpeed*2+Math.random()*0.5,0]));
+            enemies.push(new mover(150,105,[bulletSpeed*2+Math.random()*0.5,0]));
             break;
         case 3:
             enemies.push(new spinner(50, 30));
@@ -71,11 +71,20 @@ function summonWave(){
             break;
 
         case 4:
-            enemies.push(new gunner(125,30,bulletSpeed*(-1)));
-            enemies.push(new gunner(125,30,bulletSpeed*(1)));
+            enemies.push(new gunner(125,30,[bulletSpeed*(-1),0]));
+            enemies.push(new gunner(125,30,[bulletSpeed*(1),0]));
             enemies.push(new gunner(125,30))
             break;
-        
+
+        case 5:
+            enemies.push(new mover(30,30,[0,bulletSpeed*1.5+Math.random()*0.5]));
+            enemies.push(new mover(250,330,[0,bulletSpeed*1.5+Math.random()*0.5]));
+            break;
+
+        case 6:
+            enemies.push(new circler(125, 50, [bulletSpeed*0.33, -0.33*bulletSpeed]));
+            break
+
         default:
             enemies.push(new circler(125,15));
             enemies.push(new gunner(270,30));
@@ -115,7 +124,7 @@ function playerComponent(width, height, x, y) {
     };
 }
 
-function gunner(x,y,v=0){
+function gunner(x,y,v=[0,0]){
     this.img = new Image()
     this.img.src = "enemy.webp"
     this.x = x
@@ -144,9 +153,13 @@ function gunner(x,y,v=0){
             enemies.splice(enemies.indexOf(this),1)
         }
 
-        this.x+=this.velocity
+        this.x+=this.velocity[0]
         if(this.x+this.width>=gameCanvas.canvas.width || this.x <= this.width)
-                this.velocity *= -1
+                this.velocity[0] *= -1
+
+        this.y+=this.velocity[1]
+        if(this.y+this.height>=gameCanvas.canvas.height || this.y <= this.height)
+                this.velocity[1] *= -1        
 
         ctx = gameCanvas.context;
         ctx.drawImage(this.img,this.x, this.y, this.width, this.height);
@@ -156,7 +169,7 @@ function gunner(x,y,v=0){
 }
 
 
-function mover(x,y,v=bulletSpeed){
+function mover(x,y,v=[bulletSpeed,0]){
     this.img = new Image()
     this.img.src = "enemy.webp"
     this.x = x
@@ -170,14 +183,24 @@ function mover(x,y,v=bulletSpeed){
     this.update = function(){
         this.next--
         if(this.next <= 0){
-            bullets.push(new bullet(this.x+this.width/2, this.y+this.height, 0, bulletSpeed));
+            var by = this.velocity[1] == 0 ? 0 : bulletSpeed
+            if(this.x < gameCanvas.canvas.width*0.25 && by < 0){
+                by *= -1
+            } else if(this.x > gameCanvas.canvas.width*0.75 && by > 0){
+                by *= -1
+            }
+            bullets.push(new bullet(this.x+this.width/2, this.y+this.height, by, this.velocity[0] == 0 ? 0 : bulletSpeed));
             this.next = this.maxNext
 
         }
 
-        this.x+=this.velocity
+        this.x+=this.velocity[0]
         if(this.x+this.width>=gameCanvas.canvas.width || this.x <= this.width)
-                this.velocity *= -1
+                this.velocity[0] *= -1
+
+        this.y+=this.velocity[1]
+        if(this.y+this.height>=gameCanvas.canvas.height || this.y <= this.height)
+                this.velocity[1] *= -1   
 
         this.ttl--
         if(this.ttl<0){
@@ -193,7 +216,7 @@ function mover(x,y,v=bulletSpeed){
 
 
 
-function circler(x,y,v=0){
+function circler(x,y,v=[0,0]){
     this.img = new Image()
     this.img.src = "enemy.webp"
     this.x = x
@@ -226,9 +249,13 @@ function circler(x,y,v=0){
             enemies.splice(enemies.indexOf(this),1)
         }
 
-        this.x+=this.velocity
+        this.x+=this.velocity[0]
         if(this.x+this.width>=gameCanvas.canvas.width || this.x <= this.width)
-                this.velocity *= -1
+                this.velocity[0] *= -1
+
+        this.y+=this.velocity[1]
+        if(this.y+this.height>=gameCanvas.canvas.height || this.y <= this.height)
+                this.velocity[1] *= -1   
 
         ctx = gameCanvas.context;
         ctx.drawImage(this.img,this.x, this.y, this.width, this.height);
