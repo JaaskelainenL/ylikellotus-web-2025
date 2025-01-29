@@ -49,10 +49,10 @@ const setTableData = (data) => {
     data.forEach(d => {
 
         container.innerHTML += ```
-				<div class="flex justify-between text-white text-2xl font-airstrike w-full">
-					<h1>${d.name}</h1>
-					<h1>${d.guild}</h1>
-					<h1>${d.time/1000}s</h1>
+				<div class="flex justify-between text-white text-2xl font-airstrike w-full md:flex-nowrap">
+					<h1 class="w-full md:w-auto">${d.name}</h1>
+					<h1 class="w-full md:w-auto">${d.guild}</h1>
+					<h1 class="w-full md:w-auto">${d.time/1000}s</h1>
 				</div>        
         ```
 
@@ -70,11 +70,11 @@ const setGuilds = (data) => {
     data.forEach(d => {
 
         container.innerHTML += ```
-				<div class="flex justify-between text-white text-2xl font-airstrike w-full">
-					<h1>${d.guild}</h1>
-                    <h1>${d.total}</h1>
-					<h1>${d.average/1000}s</h1>
-                    <h1>${d.median/1000}</h1>
+				<div class="flex justify-between text-white text-2xl font-airstrike w-full md:flex-nowrap">
+					<h1 class="w-full md:w-auto">${d.guild}</h1>
+                    <h1 class="w-full md:w-auto">${d.total}</h1>
+					<h1 class="w-full md:w-auto">${d.average/1000}s</h1>
+                    <h1 class="w-full md:w-auto">${d.median/1000}</h1>
 				</div>        
         ```
 
