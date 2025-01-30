@@ -110,23 +110,15 @@ updateDate();
 
 const getRandomGame = () => {
 
-    const games = [{
-        name: "bh",
-        width: "300px",
-        height: "400px",
-    }, {
-        name: "td",
-        width: "1152px",
-        height: "648px",
-    }];
+    const games = ["bh", "td"];
 
     const game = games[Math.floor(Math.random() * games.length)]
 
 
     var ifrm = document.createElement("iframe");
-    ifrm.setAttribute("src", "games/"+game.name+"/index.html");
-    ifrm.style.width = game.width;
-    ifrm.style.height = game.height;
+    ifrm.setAttribute("src", "games/"+game+"/index.html");
+    ifrm.style.width = "300px";
+    ifrm.style.height = "400px";
     document.getElementById("gameHolder").appendChild(ifrm);
 
 
