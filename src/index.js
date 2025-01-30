@@ -108,10 +108,6 @@ const updateDate = () => {
 
 updateDate();
 
-updateDate();
-
-
-
 const getRandomGame = () => {
 
     const games = ["bh"];
@@ -128,3 +124,28 @@ const getRandomGame = () => {
 
 }
 getRandomGame()
+
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+
+    if (window.scrollY > window.innerHeight * 5 / 8) {
+        navbar.style.opacity = '1';
+    } else {
+        navbar.style.opacity = '0';
+    }
+});
+
+//smooth scrollaamine
+let anchorList = document.querySelectorAll('a[href^="#"]');
+anchorList.forEach(link => {
+    link.onclick = function (e) {
+
+        e.preventDefault();
+
+        let destination = document.querySelector(this.hash);
+        destination.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+});

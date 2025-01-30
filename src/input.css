@@ -10,35 +10,35 @@
 }
 
 .ufo-sky {
-    background-image: url('../res/ufosky/ufo_sky.png');
+    background-image: url('../res/ufosky/ufo_sky.webp');
     background-size: cover;
     background-position: center;
     pointer-events: none;
 }
 
 .ufo-sky-lower {
-    background-image: url('../res/ufosky/ufo_undersky_lower.png');
+    background-image: url('../res/ufosky/ufo_undersky_lower.webp');
     background-size: cover;
     background-position: center;
     pointer-events: none;
 }
 
 .ufo-sky-upper {
-    background-image: url('../res/ufosky/ufo_undersky_upper.png');
+    background-image: url('../res/ufosky/ufo_undersky_upper.webp');
     background-size: cover;
     background-position: center;
     pointer-events: none;
 }
 
 .ufo {
-    background-image: url('../res/ufosky/ufo_ufo.png');
+    background-image: url('../res/ufosky/ufo_ufo.webp');
     background-size: cover;
     background-position: center;
     pointer-events: none;
 }
 
 .ufo-sky-lower-upscreen {
-    background-image: url('../res/ufosky/ufo_undersky_lower_flip.png');
+    background-image: url('../res/ufosky/ufo_undersky_lower_flip.webp');
     background-size: cover;
     background-position: center;
     pointer-events: none;
@@ -49,4 +49,14 @@
     box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.2); /* Shadow at the top */
     border-top: 10px solid #f4f4f4; /* Light border */
     border-bottom: 10px solid #f4f4f4; /* Light border */
+}
+
+#navbar {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background:rgba(0,0,0,.7);
+    backdrop-filter: blur(5px);
+    position: -webkit-fixed; /* For Safari */
+    position: fixed;
+    top: 0;
 }
