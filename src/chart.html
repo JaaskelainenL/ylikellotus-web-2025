@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="inFinnish" lang="fi">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./lang.css">
 	<title>Ylikellotus - tulokset</title>
 </head>
 
@@ -18,14 +19,26 @@
 	<main class="">
 		<div class="ufo-sky-lower-upscreen fixed h-screen w-svw z-10"></div>
 		<section class="flex flex-col h-screen justify-center items-center z-50">
-			<h2 class="font-airstrike text-white text-3xl font-bold lg:text-7xl 2xl:text-5xl z-100 my-32">Kellotustulokset</h2>
+			<h2 class="font-airstrike text-white text-3xl font-bold lg:text-7xl 2xl:text-5xl z-100 my-32">
+				<span lang="fi">Kellotustulokset</span>
+				<span lang="en">Kellotus results</span>
+			</h2>
 
 			<div class="flex mx-auto flex-col space-y-4 w-4/5">
 
 				<div class="flex flex-wrap text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap">
-					<h1 class="w-full md:w-auto">Nimi</h1>
-					<h1 class="w-full md:w-auto">Kilta</h1>
-					<h1 class="w-full md:w-auto">Aika</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Nimi</span>
+						<span lang="en">Name</span>
+					</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Kilta</span>
+						<span lang="en">Guild</span>
+					</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Aika</span>
+						<span lang="en">Time</span>
+					</h1>
 				</div>
 
 				<div id="results">
@@ -44,16 +57,31 @@
 
 			</div>
 
-			<h2 class="font-airstrike text-white text-3xl font-bold lg:text-7xl 2xl:text-5xl z-100 my-20">Parhaat killat</h2>
+			<h2 class="font-airstrike text-white text-3xl font-bold lg:text-7xl 2xl:text-5xl z-100 my-20">
+				<span lang="fi">Parhaat killat</span>
+				<span lang="en">Top guilds</span>
+			</h2>
 
 
 			<div class="flex mx-auto flex-col space-y-4 w-4/5">
 
 				<div class="flex flex-wrap text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap">
-					<h1 class="w-full md:w-auto">Kilta</h1>
-					<h1 class="w-full md:w-auto">Kellottajat</h1>
-					<h1 class="w-full md:w-auto">Keskiarvo</h1>
-					<h1 class="w-full md:w-auto">Mediaani</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Kilta</span>
+						<span lang="en">Guild</span>
+					</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Kellottajat</span>
+						<span lang="en">Participants</span>
+					</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Keskiarvo</span>
+						<span lang="en">Mean</span>
+					</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Mediaani</span>
+						<span lang="en">Median</span>
+					</h1>
 				</div>
 
 				<div id="results-guild">
@@ -69,13 +97,17 @@
 			</div>
 
 
-			<a href="index.html" class="font-airstrike text-white text-2xl lg:text-3xl 2xl:text-3xl z-100 mt-32 pb-32">Takaisin etusivulle</a>
+			<a href="index.html" class="font-airstrike text-white text-2xl lg:text-3xl 2xl:text-3xl z-100 mt-32 pb-32">
+				<span lang="fi">Takaisin etusivulle</span>
+				<span lang="en">Front page</span>
+			</a>
 
 		</section>
 	</main>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
 	<script src="chart.js"></script>
+	<script src="lang.js"></script>
 </body>
 
 </html>
