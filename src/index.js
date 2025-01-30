@@ -106,12 +106,23 @@ const updateDate = () => {
 
 updateDate();
 
+const games = {
+    bh: {
+        width: "300px",
+        height: "400px",
+    },
+    td: {
+        width: "1152px",
+        height: "648px",
+    },
+}
+
 const startGame = (game) => {
   var ifrm = document.createElement("iframe");
   ifrm.setAttribute("src", "games/" + game + "/index.html");
   ifrm.id = "gameFrame";
-  ifrm.style.width = "300px";
-  ifrm.style.height = "400px";
+  ifrm.style.width = games[game].width;
+  ifrm.style.height = games[game].height;
   document.getElementById("gameMenu").style.display = "none";
   document.getElementById("backToGameMenu").style.display = "inline";
   document.getElementById("gameHolder").appendChild(ifrm);
