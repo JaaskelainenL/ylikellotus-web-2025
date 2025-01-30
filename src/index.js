@@ -1,39 +1,39 @@
-const ufo = document.querySelector('.ufo');
+const ufo = document.querySelector(".ufo");
 
 ufo.style.transform = "translateY(500px) translateX(-1500px)";
 
 const ufoLoop = anime({
-    targets: '.ufo',
-    translateY: 25,
-    direction: 'alternate',
-    loop: true,
-    autoplay: false,
-    easing: 'easeInOutSine',
-    duration: 2000,
+  targets: ".ufo",
+  translateY: 25,
+  direction: "alternate",
+  loop: true,
+  autoplay: false,
+  easing: "easeInOutSine",
+  duration: 2000,
 });
 
 const ufoEntry = anime({
-    targets: '.ufo',
-    translateY: 0,
-    translateX: 0,
-    direction: 'normal',
-    easing: 'spring(1, 80, 13, 10)',
-    duration: 1000,
-    delay: 300,
-    loop: false,
-    complete: function(anim) {
-        ufo.style.transform = "translateY(0px) translateX(0px)";
-        const ufoLoop = anime({
-            targets: '.ufo',
-            translateY: 25,
-            direction: 'alternate',
-            loop: true,
-            autoplay: true,
-            easing: 'easeInOutSine',
-            duration: 2000,
-        });
-        ufoLoop.play();
-    }
+  targets: ".ufo",
+  translateY: 0,
+  translateX: 0,
+  direction: "normal",
+  easing: "spring(1, 80, 13, 10)",
+  duration: 1000,
+  delay: 300,
+  loop: false,
+  complete: function (anim) {
+    ufo.style.transform = "translateY(0px) translateX(0px)";
+    const ufoLoop = anime({
+      targets: ".ufo",
+      translateY: 25,
+      direction: "alternate",
+      loop: true,
+      autoplay: true,
+      easing: "easeInOutSine",
+      duration: 2000,
+    });
+    ufoLoop.play();
+  },
 });
 
 /*
@@ -47,105 +47,103 @@ anime({
 });*/
 
 const lowerSky = anime({
-    targets: '.ufo-sky-lower',
-    translateY: 25,
-    direction: 'alternate',
-    loop: true,
-    easing: 'easeInOutSine',
-    duration: 1500,
-    delay: 300,
+  targets: ".ufo-sky-lower",
+  translateY: 25,
+  direction: "alternate",
+  loop: true,
+  easing: "easeInOutSine",
+  duration: 1500,
+  delay: 300,
 });
 
 const upperSky = anime({
-    targets: '.ufo-sky-upper',
-    translateY: 25,
-    direction: 'alternate',
-    loop: true,
-    easing: 'easeInOutSine',
-    duration: 1700,
-    delay: 250,
+  targets: ".ufo-sky-upper",
+  translateY: 25,
+  direction: "alternate",
+  loop: true,
+  easing: "easeInOutSine",
+  duration: 1700,
+  delay: 250,
 });
 
 anime({
-    targets: '.ufo-sky-lower-upscreen',
-    translateY: -25,
-    direction: 'alternate',
-    loop: true,
-    easing: 'easeInOutSine',
-    duration: 1300,
-    delay: 150,
+  targets: ".ufo-sky-lower-upscreen",
+  translateY: -25,
+  direction: "alternate",
+  loop: true,
+  easing: "easeInOutSine",
+  duration: 1300,
+  delay: 150,
 });
 
 anime({
-    targets: '.down-arrow',
-    translateY: 50,
-    direction: 'alternate',
-    loop: true,
-    easing: 'easeInOutSine',
-    duration: 500,
+  targets: ".down-arrow",
+  translateY: 50,
+  direction: "alternate",
+  loop: true,
+  easing: "easeInOutSine",
+  duration: 500,
 });
 
 const updateDate = () => {
-  const target = new Date("2025-02-26 18:00:00 GMT+0300")
+  const target = new Date("2025-02-26 18:00:00 GMT+0300");
   const now = new Date();
 
   const dif = target.getTime() - now.getTime();
 
-
   const days = Math.floor(dif / 86400000);
-  const hours = Math.round((dif % 86400000) / 3600000)
+  const hours = Math.round((dif % 86400000) / 3600000);
   const minutes = Math.round(((dif % 86400000) % 3600000) / 60000);
   const seconds = Math.round(((dif % 86400000) % 60000) / 1000);
 
-
-  document.getElementById('days').style.setProperty('--value', days);
-  document.getElementById('hours').style.setProperty('--value', hours);
-  document.getElementById('minutes').style.setProperty('--value', minutes);
-  document.getElementById('seconds').style.setProperty('--value', seconds);
+  document.getElementById("days").style.setProperty("--value", days);
+  document.getElementById("hours").style.setProperty("--value", hours);
+  document.getElementById("minutes").style.setProperty("--value", minutes);
+  document.getElementById("seconds").style.setProperty("--value", seconds);
 
   requestAnimationFrame(updateDate);
 };
 
 updateDate();
 
-const getRandomGame = () => {
+const startGame = (game) => {
+  var ifrm = document.createElement("iframe");
+  ifrm.setAttribute("src", "games/" + game + "/index.html");
+  ifrm.id = "gameFrame";
+  ifrm.style.width = "300px";
+  ifrm.style.height = "400px";
+  document.getElementById("gameMenu").style.display = "none";
+  document.getElementById("backToGameMenu").style.display = "inline";
+  document.getElementById("gameHolder").appendChild(ifrm);
+};
 
-    const games = ["bh", "td"];
+const backToGameMenu = () => {
+  const gameFrame = document.getElementById("gameFrame");
+  document.getElementById("gameHolder").removeChild(gameFrame);
+  document.getElementById("backToGameMenu").style.display = "none";
+  document.getElementById("gameMenu").style.display = "inline";
+};
 
-    const game = games[Math.floor(Math.random() * games.length)]
+const navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", function () {
+  const scrollPosition = window.scrollY;
 
-
-    var ifrm = document.createElement("iframe");
-    ifrm.setAttribute("src", "games/"+game+"/index.html");
-    ifrm.style.width = "300px";
-    ifrm.style.height = "400px";
-    document.getElementById("gameHolder").appendChild(ifrm);
-
-
-}
-getRandomGame()
-
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-
-    if (window.scrollY > window.innerHeight * 5 / 8) {
-        navbar.style.opacity = '1';
-    } else {
-        navbar.style.opacity = '0';
-    }
+  if (window.scrollY > (window.innerHeight * 5) / 8) {
+    navbar.style.opacity = "1";
+  } else {
+    navbar.style.opacity = "0";
+  }
 });
 
 //smooth scrollaamine
 let anchorList = document.querySelectorAll('a[href^="#"]');
-anchorList.forEach(link => {
-    link.onclick = function (e) {
+anchorList.forEach((link) => {
+  link.onclick = function (e) {
+    e.preventDefault();
 
-        e.preventDefault();
-
-        let destination = document.querySelector(this.hash);
-        destination.scrollIntoView({
-            behavior: 'smooth'
-        });
-    }
+    let destination = document.querySelector(this.hash);
+    destination.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 });
