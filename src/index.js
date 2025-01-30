@@ -114,7 +114,7 @@ updateDate();
 
 const getRandomGame = () => {
 
-    const games = ["bh"];
+    const games = ["bh", "td"];
 
     const game = games[Math.floor(Math.random() * games.length)]
 
