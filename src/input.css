@@ -47,8 +47,8 @@
 
 .party-image {
     box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.2); /* Shadow at the top */
-    border-top: 10px solid #f4f4f4; /* Light border */
-    border-bottom: 10px solid #f4f4f4; /* Light border */
+    border-top: 10px solid #08143b; /* Light border */
+    border-bottom: 10px solid #08143b; /* Light border */
 }
 
 #navbar {
