@@ -1,5 +1,5 @@
 const getScores = () => {
-    fetch("https://ylikellotus.lajp.fi")
+    fetch("https://backend-tb3t.onrender.com")
     .then((res) => {
       if (!res.ok) {
         throw new Error("Failed to fetch leaderboard data");
