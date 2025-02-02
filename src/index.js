@@ -107,15 +107,19 @@ const updateDate = () => {
 updateDate();
 
 const games = {
-    bh: {
-        width: "300px",
-        height: "400px",
-    },
-    td: {
-        width: "1152px",
-        height: "648px",
-    },
-}
+  bh: {
+    width: "300px",
+    height: "400px",
+  },
+  td: {
+    width: "1152px",
+    height: "648px",
+  },
+  kellotusSim: {
+    width: "500px",
+    height: "500px",
+  },
+};
 
 const startGame = (game) => {
   var ifrm = document.createElement("iframe");
