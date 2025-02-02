@@ -14,22 +14,28 @@ const setAuth = () => {
 
 
 const postScores = () => {
+
+  if(auth.length == 0){
+    setAuth();
+
+  }
+
   const name = document.getElementById("name").value
   const guild = document.getElementById("guild").value
-  const time = (parseFloat(document.getElementById("time").value)*1000).toString().replace(",",".")
+  const time = parseFloat(document.getElementById("time").value)*1000
 
 
   fetch("https://backend-tb3t.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Basic " + authHash,
+      "Authorization": "Basic " + auth,
     },
-    body:JSON.stringify({
+    body:JSON.stringify([{
       name: name,
       guild:guild,
       time:time
-    })
+    }])
   })
   .then((res) => {
     if (!res.ok) {
@@ -60,9 +66,8 @@ const getScores = () => {
     })
     .then((res) => {
       setTableData(res);
-    })
-    .catch((error) => {
-      console.error("ERROR WITH FETCHING LEADERBOARD DATA: " + error);
+    }).catch((error) => {
+      console.error("ERROR WITH fetching LEADERBOARD DATA: " + error);
     });
   if(interval == null){
     interval = setTimeout(getScores, 10000);
@@ -71,11 +76,14 @@ const getScores = () => {
 
 
 const deletePost = (id) => {
+  if(auth==="")
+    setAuth();
+
   fetch("https://backend-tb3t.onrender.com", {
-    method: "POST",
+    method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Basic " + authHash,
+      "Authorization": "Basic " + auth,
     },
     body:JSON.stringify({
       id:id
@@ -99,24 +107,23 @@ const deletePost = (id) => {
 
 
 const setTableData = (data) => {
-    if (data === undefined || data.length == 0)
+    if (data === undefined)
         return;
 
     const container = document.getElementById("results");
     container.innerHTML = "";
 
-    data.forEach(d => {
-
-        container.innerHTML += ```
+    data.forEach((d) =>
+        container.innerHTML += `
 				<div class="flex justify-between text-white text-2xl font-airstrike w-full md:flex-nowrap">
           <button onClick="deletePost(${d.id})">Poista</button>
 					<h1 class="w-full md:w-auto">${d.name}</h1>
 					<h1 class="w-full md:w-auto">${d.guild}</h1>
 					<h1 class="w-full md:w-auto">${d.time/1000}s</h1>
 				</div>        
-        ```
+        `
+    )
 
-    })
 
 }
 
