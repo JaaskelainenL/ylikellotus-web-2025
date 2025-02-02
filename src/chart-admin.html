@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="inFinnish" lang="fi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./lang.css">
+	<title>Ylikellotus - supersalainen admin näkymä</title>
+</head>
+
+<body class="overflow-x-hidden">
+	<div>
+		<div class="ufo-sky fixed h-screen w-svw -z-50"></div>
+		<div class="ufo-sky-lower fixed h-screen w-svw z-10"></div>
+		<div class="ufo-sky-upper fixed h-screen w-svw -z-10"></div>
+		<div class="ufo fixed h-screen w-svw -z-30"></div>
+	</div>
+	<main class="">
+		<div class="ufo-sky-lower-upscreen fixed h-screen w-svw z-10"></div>
+		<section class="flex flex-col h-screen justify-center items-center z-50 pb-32 mb-64">
+			<h2 class="font-airstrike text-white text-3xl font-bold lg:text-7xl 2xl:text-5xl z-100 my-32">
+				<span lang="fi">Merkkaa kellotustulokset</span>
+				<span lang="en">Mark the results</span>
+			</h2>
+
+			<div class="my-10 bg-black text-red-700 px-5 py-5 rounded-md">
+				<p>Käyttäjänimi: admin</p>
+				<p>Salasana: Ylikellotus2025</p>
+				<p><strong>Poista ennen liveen menoa!</strong></p>
+			</div>
+
+			<div class="flex mx-auto flex-col space-y-4 w-4/5">
+
+				<div class="text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap pb-32">
+					<button onclick="setAuth()">Autentikoi</button>
+				</div>
+
+				
+				<div class="flex flex-wrap text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap pb-32 gap-5">
+					<input type="text" placeholder="Nimi" id="name">
+					<input type="text" placeholder="Kilta" id="guild">
+					<input type="number" placeholder="aika" id="time">
+					<button>Lähetä</button>
+				</div>
+
+
+				<div class="flex flex-wrap text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap">
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Hallitse</span>
+						<span lang="en">Control</span>
+					</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Nimi</span>
+						<span lang="en">Name</span>
+					</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Kilta</span>
+						<span lang="en">Guild</span>
+					</h1>
+					<h1 class="w-full md:w-auto">
+						<span lang="fi">Aika</span>
+						<span lang="en">Time</span>
+					</h1>
+				</div>
+
+				<div id="results">
+
+					<div class="flex flex-wrap text-white text-2xl font-airstrike w-full justify-between text-center md:flex-nowrap">
+						<button>Poista</button>
+						<h1 class="w-full md:w-auto">Teemu Teekkari</h1>
+						<h1 class="w-full md:w-auto">Tik</h1>
+						<h1 class="w-full md:w-auto">10,0s</h1>
+					</div>
+
+				</div>
+
+
+
+
+		</section>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+	<script src="chart-admin.js"></script>
+	<script src="lang.js"></script>
+</body>
+
+</html>
