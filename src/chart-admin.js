@@ -115,7 +115,7 @@ const setTableData = (data) => {
 
     data.forEach((d) =>
         container.innerHTML += `
-				<div class="flex justify-between text-white text-2xl font-airstrike w-full md:flex-nowrap">
+				<div class="flex justify-between text-white text-2xl font-RobotoMono w-full md:flex-nowrap">
           <button onClick="deletePost(${d.id})">Poista</button>
 					<h1 class="w-full md:w-auto">${d.name}</h1>
 					<h1 class="w-full md:w-auto">${d.guild}</h1>

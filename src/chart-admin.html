@@ -18,7 +18,7 @@
 	</div>
 	<main class="">
 		<div class="ufo-sky-lower-upscreen fixed h-screen w-svw z-10"></div>
-		<section class="flex flex-col h-screen justify-center items-center z-50 pb-32 mb-64">
+		<section class="flex flex-col justify-center items-center z-50 pb-32 mb-64">
 			<h2 class="font-airstrike text-white text-3xl font-bold lg:text-7xl 2xl:text-5xl z-100 my-32">
 				<span lang="fi">Merkkaa kellotustulokset</span>
 				<span lang="en">Mark the results</span>
@@ -30,52 +30,54 @@
 				<p><strong>Poista ennen liveen menoa!</strong></p>
 			</div>
 
+			<div class="my-10">
+				<button class="btn text-white text-2xl font-RobotoMono" onclick="setAuth()">Autentikoi</button>
+			</div>
+
 			<div class="flex mx-auto flex-col space-y-4 w-4/5">
-
-				<div class="text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap pb-32">
-					<button onclick="setAuth()">Autentikoi</button>
+				<div
+					class="flex flex-wrap text-white text-3xl font-RobotoMono w-full justify-between text-center md:flex-nowrap pb-32 gap-5">
+					<input type="text" placeholder="Nimi" id="name" class="p-2">
+					<input type="text" placeholder="Kilta" id="guild" class="p-2">
+					<input type="number" placeholder="Aika (s)" id="time" class="p-2">
+					<button onclick="postScores()" class="btn font-RobotoMono text-2xl">Lähetä</button>
 				</div>
 
-				
-				<div class="flex flex-wrap text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap pb-32 gap-5">
-					<input type="text" placeholder="Nimi" id="name">
-					<input type="text" placeholder="Kilta" id="guild">
-					<input type="number" placeholder="aika" id="time">
-					<button onclick="postScores()">Lähetä</button>
-				</div>
+				<section class="bg-gray-800/50 backdrop-blur-sm p-5">
 
-
-				<div class="flex flex-wrap text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap">
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Hallitse</span>
-						<span lang="en">Control</span>
-					</h1>
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Nimi</span>
-						<span lang="en">Name</span>
-					</h1>
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Kilta</span>
-						<span lang="en">Guild</span>
-					</h1>
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Aika</span>
-						<span lang="en">Time</span>
-					</h1>
-				</div>
-
-				<div id="results">
-
-					<div class="flex flex-wrap text-white text-2xl font-airstrike w-full justify-between text-center md:flex-nowrap">
-						<button>Poista</button>
-						<h1 class="w-full md:w-auto">Teemu Teekkari</h1>
-						<h1 class="w-full md:w-auto">Tik</h1>
-						<h1 class="w-full md:w-auto">10,0s</h1>
+					<div
+						class="flex flex-wrap text-white  text-3xl font-RobotoMono w-full justify-between text-center md:flex-nowrap">
+						<h1 class="w-full md:w-auto">
+							<span lang="fi">Hallitse</span>
+							<span lang="en">Control</span>
+						</h1>
+						<h1 class="w-full md:w-auto">
+							<span lang="fi">Nimi</span>
+							<span lang="en">Name</span>
+						</h1>
+						<h1 class="w-full md:w-auto">
+							<span lang="fi">Kilta</span>
+							<span lang="en">Guild</span>
+						</h1>
+						<h1 class="w-full md:w-auto">
+							<span lang="fi">Aika</span>
+							<span lang="en">Time</span>
+						</h1>
 					</div>
 
-				</div>
+					<div id="results">
 
+						<div
+							class="flex flex-wrap text-white text-2xl font-RobotoMono w-full justify-between text-center md:flex-nowrap">
+							<button>Poista</button>
+							<h1 class="w-full md:w-auto">Teemu Teekkari</h1>
+							<h1 class="w-full md:w-auto">Tik</h1>
+							<h1 class="w-full md:w-auto">10,0s</h1>
+						</div>
 
+					</div>
+
+				</section>
 
 
 		</section>
