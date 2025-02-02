@@ -43,17 +43,17 @@ const setTableData = (data) => {
     if (data === undefined || data.length == 0)
         return;
 
-    const container = document.getElementById("results");
+    const container = document.getElementById("individual-results");
     container.innerHTML = "";
 
-    data.forEach(d => {
-
+    data.forEach((d,i) => {
         container.innerHTML += `
-				<div class="flex justify-between text-white text-2xl font-airstrike w-full md:flex-nowrap">
-					<h1 class="w-full md:w-auto">${d.name}</h1>
-					<h1 class="w-full md:w-auto">${d.guild}</h1>
-					<h1 class="w-full md:w-auto">${d.time/1000}s</h1>
-				</div>        
+        <tr class="border-white">
+						<th>${i + 1}</th>
+						<th>${d.name}</th>
+						<th>${d.guild}</th>
+						<th>${d.time/1000}</th>
+				</tr>    
         `
 
     })
@@ -64,21 +64,18 @@ const setGuilds = (data) => {
     if (data === undefined || data.length == 0)
         return;
 
-    const container = document.getElementById("results-guild");
+    const container = document.getElementById("guild-results");
     container.innerHTML = "";
 
     data.forEach(d => {
-
-
         container.innerHTML += `
-				<div class="flex justify-between text-white text-2xl font-airstrike w-full md:flex-nowrap">
-					<h1 class="w-full md:w-auto">${d.name}</h1>
-                    <h1 class="w-full md:w-auto">${d.total}</h1>
-					<h1 class="w-full md:w-auto">${d.average/1000}s</h1>
-                    <h1 class="w-full md:w-auto">${d.median/1000}</h1>
-				</div>        
+        <tr class="border-white">
+          <th>${d.name}</th>
+          <th>${d.total}</th>
+          <th>${d.average/1000}</th>
+          <th>${d.median/1000}</th>
+        </tr>   
         `
-
     })
 
 }

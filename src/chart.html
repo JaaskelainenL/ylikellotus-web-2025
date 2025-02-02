@@ -18,43 +18,36 @@
 	</div>
 	<main class="">
 		<div class="ufo-sky-lower-upscreen fixed h-screen w-svw z-10"></div>
-		<section class="flex flex-col h-screen justify-center items-center z-50">
+		<section class="flex flex-col justify-center items-center z-50">
 			<h2 class="font-airstrike text-white text-3xl font-bold lg:text-7xl 2xl:text-5xl z-100 my-32">
 				<span lang="fi">Kellotustulokset</span>
 				<span lang="en">Kellotus results</span>
 			</h2>
 
-			<div class="flex mx-auto flex-col space-y-4 w-4/5">
-
-				<div class="flex flex-wrap text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap">
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Nimi</span>
-						<span lang="en">Name</span>
-					</h1>
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Kilta</span>
-						<span lang="en">Guild</span>
-					</h1>
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Aika</span>
-						<span lang="en">Time</span>
-					</h1>
+			<div class="flex mx-auto flex-col space-y-4 w-4/5 z-10">
+				<div class="bg-gray-700/30 backdrop-blur-sm p-5 font-normal rounded-3xl">
+					<table class="table font-RobotoMono text-white font-normal text-3xl">
+						<thead class="font-normal text-4xl text-white">
+							<tr class="border-white">
+								<th></th>
+								<th>
+									<span lang="fi">Nimi</span>
+									<span lang="en">Name</span>
+								</th>
+								<th>
+									<span lang="fi">Kilta</span>
+									<span lang="en">Guild</span>
+								</th>
+								<th>
+									<span lang="fi">Aika</span>
+									<span lang="en">Time</span>
+								</th>
+							</tr>
+						</thead>
+						<tbody id="individual-results">
+						</tbody>
+					</table>
 				</div>
-
-				<div id="results">
-
-					<div class="flex flex-wrap text-white text-2xl font-airstrike w-full justify-between text-center md:flex-nowrap">
-						<h1 class="w-full md:w-auto">Teemu Teekkari</h1>
-						<h1 class="w-full md:w-auto">Tik</h1>
-						<h1 class="w-full md:w-auto">10,0s</h1>
-					</div>
-
-				</div>
-
-
-
-
-
 			</div>
 
 			<h2 class="font-airstrike text-white text-3xl font-bold lg:text-7xl 2xl:text-5xl z-100 my-20">
@@ -62,42 +55,37 @@
 				<span lang="en">Top guilds</span>
 			</h2>
 
-
-			<div class="flex mx-auto flex-col space-y-4 w-4/5">
-
-				<div class="flex flex-wrap text-white text-3xl font-airstrike w-full justify-between text-center md:flex-nowrap">
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Kilta</span>
-						<span lang="en">Guild</span>
-					</h1>
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Kellottajat</span>
-						<span lang="en">Participants</span>
-					</h1>
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Keskiarvo</span>
-						<span lang="en">Mean</span>
-					</h1>
-					<h1 class="w-full md:w-auto">
-						<span lang="fi">Mediaani</span>
-						<span lang="en">Median</span>
-					</h1>
+			<div class="flex mx-auto flex-col space-y-4 w-4/5 z-10">
+				<div class="bg-gray-700/30 backdrop-blur-sm p-5 font-normal rounded-3xl">
+					<table class="table font-RobotoMono text-white font-normal text-3xl">
+						<thead class="font-normal text-4xl text-white">
+							<tr class="border-white">
+								<th>
+									<span lang="fi">Kilta</span>
+									<span lang="en">Guild</span>
+								</th>
+								<th>
+									<span lang="fi">Kellottajat</span>
+									<span lang="en">Participants</span>
+								</th>
+								<th>
+									<span lang="fi">Keskiarvo</span>
+									<span lang="en">Mean</span>
+								</th>
+								<th>
+									<span lang="fi">Mediaani</span>
+									<span lang="en">Median</span>
+								</th>
+							</tr>
+						</thead>
+						<tbody id="guild-results">
+						</tbody>
+					</table>
 				</div>
-
-				<div id="results-guild">
-					<div class="flex flex-wrap text-white text-2xl font-airstrike w-full justify-between text-center md:flex-nowrap">
-						<h1 class="w-full md:w-auto">Tik</h1>
-						<h1 class="w-full md:w-auto">100</h1>
-						<h1 class="w-full md:w-auto">10,5s</h1>
-						<h1 class="w-full md:w-auto">12,3s</h1>
-					</div>
-				</div>
-
-
 			</div>
 
 
-			<a href="/" class="font-airstrike text-white text-2xl lg:text-3xl 2xl:text-3xl z-100 mt-32 pb-32 underline">
+			<a href="/" class="font-airstrike text-white text-2xl lg:text-3xl 2xl:text-3xl z-100 mt-64 pb-32 underline">
 				<span lang="fi">Takaisin etusivulle</span>
 				<span lang="en">Front page</span>
 			</a>

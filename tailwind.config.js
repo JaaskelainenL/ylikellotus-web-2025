@@ -5,6 +5,7 @@ module.exports = {
         extend: {},
         fontFamily: {
             'airstrike': ['Airstrike', 'sans-serif'],
+            'RobotoMono': ["Roboto Mono", "monospace"]
         }
     },
     plugins: [
