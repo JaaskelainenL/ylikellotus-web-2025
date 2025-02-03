@@ -13,66 +13,10 @@
 	<a id="top"></a>
 	<div class="navbar bg-gray-800 z-50 border-b-2 border-pink-200 w-screen" id="navbar">
 		<div class="navbar-start xl:ps-64">
-			<div class="dropdown">
-				<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-					<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-5 w-5"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor">
-						<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M4 6h16M4 12h8m-8 6h16" />
-					</svg>
-				</div>
-				<ul
-						tabindex="0"
-						class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[100] mt-3 w-52 p-2 shadow">
-					<li>
-						<a href="#countdown">
-							<span lang="fi">Liput</span>
-							<span lang="en">Ticket</span>
-						</a>
-					</li>
-					<li>
-						<a href="#socials">
-							<span lang="fi">Tiedotus</span>
-							<span lang="en">Info channels</span>
-						</a>
-					</li>
-					<li>
-						<a href="#game">
-							<span lang="fi">Peli</span>
-							<span lang="en">Game</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<ul class="menu menu-horizontal px-1">
-				<li>
-					<a href="#countdown">
-						<span lang="fi">Liput</span>
-						<span lang="en">Tickets</span>
-					</a>
-				</li>
-				<li>
-					<a href="#socials">
-						<span lang="fi">Tiedotus</span>
-						<span lang="en">Info channels</span>
-					</a>
-				</li>
-				<li>
-					<a href="#game">
-						<span lang="fi">Peli</span>
-						<span lang="en">Game</span>
-					</a>
-				</li>
-		</ul>
+			<a id="enButton" class="btn btn-primary btn-outline btn-xs md:btn-md" onclick="langEN()">🇺🇸</a>
+			<a style="display: none;" id="fiButton" class="btn btn-primary btn-outline btn-xs md:btn-md" onclick="langFI()">🇫🇮</a>
 		</div>
-		<div class="navbar-center hidden lg:flex">
+		<div class="navbar-center flex">
 			<a href="#top" class="btn btn-ghost text-xl font-airstrike font-light">Ylikellotus 2025</a>
 		</div>
 		<div class="navbar-end xl:pe-64">
