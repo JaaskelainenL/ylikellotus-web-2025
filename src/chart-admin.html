@@ -43,41 +43,38 @@
 					<button onclick="postScores()" class="btn font-RobotoMono text-2xl">Lähetä</button>
 				</div>
 
-				<section class="bg-gray-800/50 backdrop-blur-sm p-5">
+				<div class="mx-auto space-y-4 w-4/5 z-10 bg-gray-700/30 backdrop-blur-sm p-5 font-normal rounded-3xl overflow-y-scroll">
+					<table class="table font-RobotoMono text-white font-normal lg:text-3xl">
+						<thead class="font-normal lg:text-4xl text-white">
+							<tr class="border-white">
+								<th>
 
-					<div
-						class="flex flex-wrap text-white  text-3xl font-RobotoMono w-full justify-between text-center md:flex-nowrap">
-						<h1 class="w-full md:w-auto">
-							<span lang="fi">Hallitse</span>
-							<span lang="en">Control</span>
-						</h1>
-						<h1 class="w-full md:w-auto">
-							<span lang="fi">Nimi</span>
-							<span lang="en">Name</span>
-						</h1>
-						<h1 class="w-full md:w-auto">
-							<span lang="fi">Kilta</span>
-							<span lang="en">Guild</span>
-						</h1>
-						<h1 class="w-full md:w-auto">
-							<span lang="fi">Aika</span>
-							<span lang="en">Time</span>
-						</h1>
-					</div>
-
-					<div id="results">
-
-						<div
-							class="flex flex-wrap text-white text-2xl font-RobotoMono w-full justify-between text-center md:flex-nowrap">
-							<button>Poista</button>
-							<h1 class="w-full md:w-auto">Teemu Teekkari</h1>
-							<h1 class="w-full md:w-auto">Tik</h1>
-							<h1 class="w-full md:w-auto">10,0s</h1>
-						</div>
-
-					</div>
-
-				</section>
+								</th>
+								<th>
+									<span lang="fi">Nimi</span>
+									<span lang="en">Name</span>
+								</th>
+								<th>
+									<span lang="fi">Kilta</span>
+									<span lang="en">Guild</span>
+								</th>
+								<th>
+									<span lang="fi">Aika</span>
+									<span lang="en">Time</span>
+								</th>
+							</tr>
+						</thead>
+						<tbody id="results">
+							<tr class="border-white">
+								<th><button>Poista</button></th>
+								<th>${d.name}</th>
+								<th>${d.total}</th>
+								<th>${d.average/1000} s</th>
+								<th>${d.median/1000} s</th>
+							</tr>   
+						</tbody>
+					</table>
+				</div>
 
 
 		</section>
