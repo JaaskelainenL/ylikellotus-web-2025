@@ -6,11 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./styles.css">
 	<link rel="stylesheet" href="./lang.css">
-	<title>Ylikellotus</title>
+	<title>Ylikellotus 2025</title>
 </head>
 
 <body class="overflow-x-hidden overflow-y-auto h-[100%] w-screen">
-	<div class="navbar bg-gray-800 z-50 border-b-2 border-pink-200 top-0 w-screen overflow-x-hidden" id="navbar">
+	<a id="top"></a>
+	<div class="navbar bg-gray-800 z-50 border-b-2 border-pink-200 w-screen" id="navbar">
 		<div class="navbar-start xl:ps-64">
 			<div class="dropdown">
 				<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -29,7 +30,7 @@
 				</div>
 				<ul
 						tabindex="0"
-						class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+						class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[100] mt-3 w-52 p-2 shadow">
 					<li>
 						<a href="#countdown">
 							<span lang="fi">Liput</span>
@@ -50,7 +51,7 @@
 					</li>
 				</ul>
 			</div>
-			<a class="btn btn-ghost text-xl font-airstrike font-light">Ylikellotus 2025</a>
+			<a href="#top" class="btn btn-ghost text-xl font-airstrike font-light">Ylikellotus 2025</a>
 		</div>
 		<div class="navbar-center hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
@@ -75,7 +76,7 @@
 			</ul>
 		</div>
 		<div class="navbar-end xl:pe-64">
-			<a class="btn btn-primary lg:mt-5 hover:bg-pink-800">
+			<a class="btn btn-primary">
 				<span lang="fi">Osta liput</span>
 				<span lang="en">Get tickets</span>
 			</a>
@@ -131,7 +132,7 @@
 						<p class="text-white text-md md:text-2xl">
 							26.2
 							<span lang="fi">klo 19.00 @</span>
-							<span lang="en">at 18:00 @</span>
+							<span lang="en">at 19:00 @</span>
 							<a href="https://maps.app.goo.gl/FzB16cfH1bx2SHHX6" class="underline">Betonimiehenkuja 3, Otaniemi</a>.</p>
 						</div>
 					</div>
@@ -159,7 +160,7 @@
 			</div>
 		</section>
 		<section
-				class="hero min-h-screen -z-20 relative party-image"
+				class="hero min-h-screen party-image -z-20"
 				style="background-image: url(../res/party.jpeg);" id="countdown">
 			<div class="hero-overlay bg-opacity-60"></div>
 			<div class="hero-content text-neutral-content text-center">
@@ -191,10 +192,10 @@
 							</span>sec
 						</div>
 					</div>
-					<button class="btn btn-primary mt-5 hover:bg-pink-800">
+					<a href="#" class="btn btn-primary mt-5">
 						<span lang="fi">Osta liput</span>
 						<span lang="en">Buy your tickets</span>
-					</button>
+					</a>
 				</div>
 			</div>
 		</section>
