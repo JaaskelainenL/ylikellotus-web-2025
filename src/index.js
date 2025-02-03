@@ -128,7 +128,7 @@ const startGame = (game) => {
   ifrm.style.width = games[game].width;
   ifrm.style.height = games[game].height;
   document.getElementById("gameMenu").style.display = "none";
-  document.getElementById("backToGameMenu").style.display = "inline";
+  document.getElementById("backToGameMenu").style.display = "flex";
   document.getElementById("gameHolder").appendChild(ifrm);
 };
 
@@ -136,7 +136,7 @@ const backToGameMenu = () => {
   const gameFrame = document.getElementById("gameFrame");
   document.getElementById("gameHolder").removeChild(gameFrame);
   document.getElementById("backToGameMenu").style.display = "none";
-  document.getElementById("gameMenu").style.display = "inline";
+  document.getElementById("gameMenu").style.display = "flex";
 };
 
 const navbar = document.querySelector(".navbar");

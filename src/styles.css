@@ -2759,6 +2759,14 @@ html {
   height: 100vh;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2793,6 +2801,14 @@ html {
 
 .w-svw {
   width: 100svw;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .max-w-md {
@@ -3210,8 +3226,16 @@ html {
 }
 
 @media (min-width: 768px) {
+  .md\:h-12 {
+    height: 3rem;
+  }
+
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-12 {
+    width: 3rem;
   }
 
   .md\:flex-nowrap {
@@ -3240,6 +3264,10 @@ html {
 }
 
 @media (min-width: 1024px) {
+  .lg\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -3254,6 +3282,10 @@ html {
 
   .lg\:w-16 {
     width: 4rem;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75%;
   }
 
   .lg\:text-3xl {
