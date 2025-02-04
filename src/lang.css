@@ -1,0 +1,10 @@
+body [lang=fi],
+body [lang=en] {
+	display: none;
+}
+.inFinnish [lang=fi] {
+	display: inline;
+}
+.inEnglish [lang=en] {
+	display: inline;
+}

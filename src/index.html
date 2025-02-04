@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="inFinnish" lang="fi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./lang.css">
+	<title>Ylikellotus 2025</title>
+</head>
+
+<body class="overflow-x-hidden overflow-y-auto h-[100%] w-screen">
+	<a id="top"></a>
+	<div class="navbar bg-gray-800 z-50 border-b-2 border-pink-200 w-screen" id="navbar">
+		<div class="navbar-start xl:ps-64">
+			<a id="enButton" class="btn btn-primary btn-outline btn-xs md:btn-md" onclick="langEN()">🇺🇸</a>
+			<a style="display: none;" id="fiButton" class="btn btn-primary btn-outline btn-xs md:btn-md" onclick="langFI()">🇫🇮</a>
+		</div>
+		<div class="navbar-center flex">
+			<a href="#top" class="btn btn-ghost text-xl font-airstrike font-light">Ylikellotus 2025</a>
+		</div>
+		<div class="navbar-end xl:pe-64">
+			<a class="btn btn-outline btn-primary btn-xs md:btn-md">
+				<span lang="fi">Osta liput</span>
+				<span lang="en">Get tickets</span>
+			</a>
+		</div>
+	</div>
+	<div class="overflow-hidden">
+		<div class="ufo-sky fixed h-screen w-svw -z-50"></div>
+		<div class="ufo-sky-lower fixed h-screen w-svw z-10"></div>
+		<div class="ufo-sky-upper fixed h-screen w-svw -z-10"></div>
+		<div class="ufo fixed h-screen w-svw -z-30"></div>
+	</div>
+	<main class="">
+		<div class="ufo-sky-lower-upscreen fixed h-screen w-svw z-10"></div>
+		<section class="flex flex-col h-screen justify-center items-center z-50">
+			<h1 class="font-airstrike text-white text-5xl font-bold lg:text-7xl 2xl:text-9xl z-100">ylikellotus</h1>
+			<h1
+					class="font-airstrike text-white text-2xl font-bold lg:text-4xl 2xl:text-7xl z-20">26.2
+				@ BMK 3</h1>
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+					 stroke="currentColor" class="size-16 down-arrow">
+					<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+				</svg>
+			</div>
+
+		</section>
+		<section>
+			<div class="flex flex-col justify-center items-center w-screen font-airstrike">
+				<div class="flex flex-row items-center justify-center w-3/4 pt-14">
+					<div class="basis-1/2">
+						<h2 class="text-white text-3xl md:text-6xl font-airstrike">
+							<span lang="fi">Mikä ja mitä?</span>
+							<span lang="en">What and what?</span>
+						</h2>
+						<div class="bg-[#eba432] border border-r-2 rounded-2xl p-5 text-2xl font-airstrike">
+							<p class="text-white text-md md:text-2xl">
+								<span lang="fi">Vuoden hulluimmat kekkerit</span>
+								<span lang="en">This year's craziest party</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="basis-1/2"></div>
+			</div>
+			<div class="flex flex-row items-center justify-center lg:w-3/4 pt-14">
+				<div class="basis-1/4"></div>
+				<div class="basis-1/2 ">
+					<h2 class="text-white text-3xl md:text-6xl font-airstrike">
+						<span lang="fi">Missä ja milloin?</span>
+						<span lang="en">Where and when?</span>
+					</h2>
+					<div class="bg-[#e67852] border border-r-2 rounded-2xl p-5 text-2xl font-airstrike">
+						<p class="text-white text-md md:text-2xl">
+							26.2
+							<span lang="fi">klo 19.00 @</span>
+							<span lang="en">at 19:00 @</span>
+							<a href="https://maps.app.goo.gl/FzB16cfH1bx2SHHX6" class="underline">Betonimiehenkuja 3, Otaniemi</a>.</p>
+						</div>
+					</div>
+					<div class="basis-1/4"></div>
+				</div>
+				<div class="flex flex-row items-center justify-center w-3/4 pt-14 pb-32">
+					<div class="basis-1/2"></div>
+					<div class="basis-1/2 ">
+						<h2 class="text-white text-3xl md:text-6xl font-airstrike ">
+							<span lang="fi">Teema?</span>
+							<span lang="en">Theme?</span>
+						</h2>
+							<div class="bg-[#bb4358] border border-r-2 rounded-2xl p-5 text-2xl font-airstrike">
+							<p class="text-white text-md md:text-2xl">
+								🛸🛸
+								<span lang="fi">Scifi!</span>
+								<span lang="en">Sci-fi!</span>
+								🛸🛸  DC:
+								<span lang="fi">Scifi & cyberpunk</span>
+								<span lang="en">Sci-fi & cyberpunk</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section
+				class="hero min-h-screen party-image -z-20"
+				style="background-image: url(../res/party.jpeg);" id="countdown">
+			<div class="hero-overlay bg-opacity-60"></div>
+			<div class="hero-content text-neutral-content text-center">
+				<div class="max-w-md">
+					<h1 class="mb-5 text-5xl font-airstrike">
+						<span lang="fi">Mekään emme malta odottaa!</span>
+						<span lang="en">Yeah, we can't wait either!</span>
+					</h1>
+					<p class="mb-5">
+					<div class="flex gap-10">
+						<div>
+							<span class="countdown font-mono text-4xl">
+								<span style="--value:15;" id="days"></span>
+							</span>days
+						</div>
+						<div>
+							<span class="countdown font-mono text-4xl">
+								<span style="--value:10;" id="hours"></span>
+							</span>hours
+						</div>
+						<div>
+							<span class="countdown font-mono text-4xl">
+								<span style="--value:24;" id="minutes"></span>
+							</span>min
+						</div>
+						<div>
+							<span class="countdown font-mono text-4xl">
+								<span style="--value:0;" id="seconds"></span>
+							</span>sec
+						</div>
+					</div>
+					<a href="#" class="btn btn-primary mt-5">
+						<span lang="fi">Osta liput</span>
+						<span lang="en">Buy your tickets</span>
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div class="flex flex-col justify-center items-center h-screen" id="socials">
+				<h2 class="text-2xl md:text-5xl xl:text-7xl font-airstrike text-white">
+					<span lang="fi">Liity tiedotuskanaville</span>
+					<span lang="en">Follow the info channels</span>
+				</h2>
+				<div class="flex flex-row justify-center items-center" style="filter: brightness(0) saturate(100%) invert(64%) sepia(62%) saturate(4660%) hue-rotate(281deg) brightness(107%) contrast(105%);">
+					<a href="https://instagram.com/ylikellotus" target="_blank">
+						<svg class="w-12 h-12 lg:w-16 lg:h-16  me-5 cursor-pointer hover:scale-110 duration-150" xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 448 512">
+						<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+					</svg>
+				</a>
+					<a href="https://t.me/ylikellotus" target="_blank">
+						<svg class="w-12 h-12 lg:w-16 lg:h-16 cursor-pointer hover:scale-110 duration-150"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 496 512">
+						<path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/>
+					</svg>
+				</a>
+
+				</div>
+
+			</div>
+
+			<div class="flex flex-col justify-center items-center h-screen" id="game">
+				<h2 class="text-2xl md:text-5xl xl:text-7xl font-airstrike text-white text-center">
+					<span lang="fi">Pelaa odotellessa Ylikellotus-pelejä</span>
+					<span lang="en">Play Ylikellotus-games while you wait</span>
+					:)
+				</h2>
+				<div id="gameMenu" class="flex flex-wrap justify-center items-center">
+					<button class="btn  m-1" onclick="startGame('bh')">Bullet hell</button>
+					<button class="btn  m-1" onclick="startGame('td')">Tower defense</button>
+					<button class="btn  m-1" onclick="startGame('kellotusSim')">Kellotussimulaattori</button>
+				</div>
+				<div id="backToGameMenu" style="display: none;">
+					<button class="btn m-1" onClick="backToGameMenu()">
+						<span lang="fi">Takaisin pelien valintaan</span>
+						<span lang="en">Back to selection</span>
+					</button>
+				</div>
+				<div class="flex flex-row justify-center items-center border-pink-200 border-2 shadow-2xl" id="gameHolder"></div>
+
+				<a href="chart.html" class="font-airstrike text-2xl lg:text-3xl 2xl:text-3xl z-100 mt-32 text-white hover:underline">
+					<span lang="fi">Kellotustuloksiin</span>
+					<span lang="en">Clocking leaderboard</span>
+				</a>
+			</div>
+
+		</section>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+	<script src="index.js"></script>
+	<script src="lang.js"></script>
+</body>
+
+</html>
