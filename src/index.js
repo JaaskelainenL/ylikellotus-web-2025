@@ -86,7 +86,7 @@ anime({
 });
 
 const updateDate = () => {
-    const target = new Date("2025-02-26 19:00:00 GMT+0300");
+    const target = new Date(Date.UTC(2025, 1, 26, 16, 0, 0));
     const now = new Date();
 
     const dif = target.getTime() - now.getTime();
