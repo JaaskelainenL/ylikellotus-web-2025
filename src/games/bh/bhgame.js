@@ -381,9 +381,12 @@ function updateGameArea() {
     updatePlayerSpeed();
     player.update();
     enemies.forEach(e => {e.update()});
-    bullets.forEach(e => {
-        e.update();
-        if(collisionCheck(e)){
+    bullets.forEach(bullet => {
+        bullet.update();
+        if(bullet.x < player.x + player.width * 0.5 &&
+            bullet.x + bullet.width > player.x + player.width * 0.2 &&
+            bullet.y < player.y + player.height * 0.5 &&
+            bullet.y + bullet.height > player.y + player.height * 0.2){
             gameOver();
         }
     });
@@ -414,15 +417,6 @@ function gameOver(){
     gameCanvas.context.fillText("Points: "+wave,100,140)
     document.getElementById("gamingButton").hidden = false;
     wave=0;
-}
-
-
-function collisionCheck(bullet){
-    return bullet.x < player.x + player.width * 0.5 &&
-    bullet.x + bullet.width > player.x + player.width * 0.2 &&
-    bullet.y < player.y + player.height * 0.5 &&
-    bullet.y + bullet.height > player.y + player.height * 0.2;
-
 }
 
 
